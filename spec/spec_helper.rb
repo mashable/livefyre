@@ -1,6 +1,12 @@
 require 'rubygems'
 require 'bundler/setup'
 
+begin
+  require 'rails'
+  require 'resque'
+rescue LoadError
+end
+
 if ENV['COVERAGE']
   require 'simplecov'
   if ENV['RCOV']

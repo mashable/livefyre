@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Documentation
 
-Full documentation is available [on GitHub](http://mashable.github.com/livefyre/).
+Full documentation is available [on GitHub](http://mashable.github.com/livefyre/frames.html).
 
 You can generate full documentation yourself from the source tree. Requires the yard-tomdoc plugin.
 
@@ -75,6 +75,31 @@ Finally, you'll need to set up a pull URL. Since this is done via the API, you a
 you may do it any other way you please, too. Livefyre will substitute the string "{id}" for the user ID it wants data for.
 
     Livefyre::Domain.new.set_pull_url "http://your.domain.com/livefyre/{id}/pull"
+
+You may want to invoke user updates when you save the user record.
+
+    def update
+      # ... user record updates here!
+      Livefyre::User.new( user._id ).refresh
+    end
+
+Or you can have the gem do it automatically from the model:
+
+    class User < ActiveRecord::Base
+      # ...
+
+      livefyre_user :update_on => [:email, :display_name]
+    end
+
+You can even have the gem do your ping updated asynchronously with Resque
+
+    class User < ActiveRecord::Base
+      # ...
+
+      livefyre_user :update_on => [:email, :display_name], :defer => true
+    end
+
+This will enqueue a ping-to-pull job in the "livefyre" queue. Make sure you have a worker running that'll handle that queue!
 
 ### View integration
 
