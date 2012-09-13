@@ -82,6 +82,15 @@
 <pre class="code ruby"><code>$ gem install livefyre
 </code></pre>
 
+<h2>Documentation</h2>
+
+<p>Full documentation is available <a href="http://mashable.github.com/livefyre/">on GitHub</a>.</p>
+
+<p>You can generate full documentation yourself from the source tree. Requires the yard-tomdoc plugin.</p>
+
+<pre class="code ruby"><code>yard --plugin yard-tomdoc -o doc
+</code></pre>
+
 <h2>Usage</h2>
 
 <p>You can set a default configuration object for Livefyre, which will prevent you from having to pass a client to
@@ -107,11 +116,6 @@ all your object proxies manually.</p>
 <span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>some_user_id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_refresh'>refresh</span> <span class='comment'># Invoke ping-to-pull
 </span></code></pre>
-
-<p>You can generate full documentation yourself from the source tree. Requires the yard-tomdoc plugin. Online documentation forthcoming.</p>
-
-<pre class="code ruby"><code>yard --plugin yard-tomdoc -o doc
-</code></pre>
 
 <h2>Using with Rails</h2>
 
@@ -195,7 +199,7 @@ you may do it any other way you please, too. Livefyre will substitute the string
 </div></div>
 
     <div id="footer">
-  Generated on Thu Sep 13 15:29:08 2012 by
+  Generated on Thu Sep 13 15:38:10 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.2.1 (ruby-1.9.3).
 </div>
