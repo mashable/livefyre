@@ -2,10 +2,10 @@ module Livefyre
   # Public: Primary interface to the Livefyre API
   class Client
     extend Forwardable
-    # Internal: Valid roles for #set_user_role
+    # Public: Valid roles for #set_user_role
     ROLES = %w(admin member none outcast owner)
 
-    # Internal: Valid scopes for #set_user_role
+    # Public: Valid scopes for #set_user_role
     SCOPES = %w(domain site conv)
 
     attr_accessor :host, :key, :options, :system_token, :http_client

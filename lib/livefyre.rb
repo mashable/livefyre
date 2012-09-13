@@ -40,3 +40,10 @@ require File.expand_path("livefyre/client", File.dirname(__FILE__))
 require File.expand_path("livefyre/user", File.dirname(__FILE__))
 require File.expand_path("livefyre/domain", File.dirname(__FILE__))
 require File.expand_path("livefyre/site", File.dirname(__FILE__))
+
+if defined?(Rails)
+  require File.expand_path("livefyre/controller_extensions", File.dirname(__FILE__))
+  require File.expand_path("livefyre/helpers", File.dirname(__FILE__))
+  require File.expand_path("../railties/railtie", File.dirname(__FILE__))
+  require File.expand_path("livefyre/engine", File.dirname(__FILE__))
+end
