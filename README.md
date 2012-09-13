@@ -16,6 +16,14 @@ Or install it yourself as:
 
     $ gem install livefyre
 
+## Documentation
+
+Full documentation is available [on GitHub](http://mashable.github.com/livefyre/).
+
+You can generate full documentation yourself from the source tree. Requires the yard-tomdoc plugin.
+
+    yard --plugin yard-tomdoc -o doc
+
 ## Usage
 
 You can set a default configuration object for Livefyre, which will prevent you from having to pass a client to
@@ -39,10 +47,6 @@ Once that's set, you're ready to start talking to Livefyre.
 
     user = Livefyre::User.new("some_user_id")
     user.refresh # Invoke ping-to-pull
-
-You can generate full documentation yourself from the source tree. Requires the yard-tomdoc plugin. Online documentation forthcoming.
-
-    yard --plugin yard-tomdoc -o doc
 
 ## Using with Rails
 
