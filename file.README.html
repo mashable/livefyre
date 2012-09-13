@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.2.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>Livefyre</h1>
+
+<p>Interface library for Livefyre&#39;s API. Currently a mishmash of the v2 and v3 APIs.</p>
+
+<h2>Installation</h2>
+
+<p>Add this line to your application&#39;s Gemfile:</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>livefyre</span><span class='tstring_end'>'</span></span>
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre class="code ruby"><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre class="code ruby"><code>$ gem install livefyre
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>You can set a default configuration object for Livefyre, which will prevent you from having to pass a client to
+all your object proxies manually.</p>
+
+<pre class="code ruby"><code><span class='const'>Livefyre</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+  <span class='symbol'>:network</span>      <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foo.fyre.co</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='symbol'>:network_key</span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>blorgons</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='symbol'>:site_id</span>      <span class='op'>=&gt;</span> <span class='int'>1234</span><span class='comma'>,</span>
+  <span class='symbol'>:site_key</span>     <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>minerva</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='symbol'>:system_token</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>your_long_lived_system_token</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='symbol'>:domain</span>       <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>zor.t123.livefyre.com</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span>
+</code></pre>
+
+<p>If you&#39;re using this gem from Rails, we recommend doing this from an initializer.</p>
+
+<p>Once that&#39;s set, you&#39;re ready to start talking to Livefyre.</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_domain'>domain</span> <span class='op'>=</span> <span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>Domain</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_domain'>domain</span><span class='period'>.</span><span class='id identifier rubyid_set_pull_url'>set_pull_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://foo.bar/users/{id}/pull/</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>some_user_id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_refresh'>refresh</span> <span class='comment'># Invoke ping-to-pull
+</span></code></pre>
+
+<p>You can generate full documentation yourself from the source tree. Requires the yard-tomdoc plugin. Online documentation forthcoming.</p>
+
+<pre class="code ruby"><code>yard --plugin yard-tomdoc -o doc
+</code></pre>
+
+<h2>Using with Rails</h2>
+
+<p>Integration with Rails is straightforward, but does require some setup.</p>
+
+<h3>Controller integration</h3>
+
+<p>You need to add a route to your routes file to handle profile pull requests from Livefyre. That&#39;ll look something like:</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/livefyre/:id/pull</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:to</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>users#pull</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<p>Of course, you need a matching controller action</p>
+
+<pre class="code ruby"><code><span class='kw'>def</span> <span class='id identifier rubyid_pull'>pull</span>
+  <span class='comment'># Checks the validity of the JWT that Livefyre sends with pull requests. Throws an exception if it's no good.
+</span>  <span class='id identifier rubyid_validate_livefyre_request!'>validate_livefyre_request!</span>
+
+  <span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='comment'># livefile_profile will attempt to generate valid Livefire profile dump from the passed user record by guessing at field names.
+</span>  <span class='comment'># You can pass overides in a hash as the second option, or you can always generate your own data structure.
+</span>  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_livefire_profile'>livefire_profile</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span> <span class='symbol'>:image</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_profile_image_url'>profile_image_url</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>Finally, you&#39;ll need to set up a pull URL. Since this is done via the API, you are expected to do it manually. From a Rails console is fine, though
+you may do it any other way you please, too. Livefyre will substitute the string &quot;id&quot; for the user ID it wants data for.</p>
+
+<pre class="code ruby"><code><span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>Domain</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_set_pull_url'>set_pull_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://your.domain.com/livefyre/{id}/pull</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h3>View integration</h3>
+
+<p>In the location that you want to use your comment form, include something like the following:</p>
+
+<pre class="code ruby"><code>&lt;%= livefyre_comments post.id, post.title, post_url(post), post.tags %&gt;
+</code></pre>
+
+<p>You&#39;ll also need to boot Livefyre with Javascript. In your application.js, you&#39;ll want to include the Livefyre loader in your manifest:</p>
+
+<pre class="code ruby"><code>//=require livefyre.js
+</code></pre>
+
+<p>And then somewhere in your application.js, you&#39;ll want to actually boot:</p>
+
+<pre class="code ruby"><code>window.initLivefyre({
+  login: function() {
+      // Things to do when the user clicks the &quot;sign in&quot; link. You probably want to
+      // take your user through a login cycle in a popup window, which includes calling
+      // the livefyre_login(user_id, user_name) method.
+      window.location = &quot;/login&quot;;
+    },
+  logout: function() {
+      // things to do when the user clicks the &quot;sign out&quot; link. You probably want to take
+      // your user through the logout cycle, including a call to livefyre_logout.
+      window.location = &quot;/logout&quot;;
+    },
+  viewProfile: function(handlers, author) {
+      // Handler for when a user's name is clicked in a comment
+      window.location = &quot;/&quot; + author;
+    },
+  editProfile: function(handlers, author) {
+      // Handler for when a user wants to edit their profile from the Livefyre user dropdown.
+      window.location = &quot;/&quot; + author + &quot;/edit&quot;;
+    }
+});
+</code></pre>
+
+<p>That&#39;s it!</p>
+
+<h2>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am &#39;Added some feature&#39;</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+</div></div>
+
+    <div id="footer">
+  Generated on Thu Sep 13 15:29:08 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.2.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>
