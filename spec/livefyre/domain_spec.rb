@@ -140,7 +140,7 @@ describe Livefyre::Domain do
     describe "#add_owner" do
       context "on success" do
         before do
-          client = double( :put => double(:success? => true), :system_token => "x", :host => "some_host", :key => "some_key" )
+          client = double( :post => double(:success? => true), :system_token => "x", :host => "some_host", :key => "some_key" )
           subject.stub(:client).and_return(client)
         end
 
@@ -151,7 +151,7 @@ describe Livefyre::Domain do
 
       context "on failure" do
         before do
-          client = double( :put => double(:success? => false, :body => ""), :system_token => "x", :host => "some_host", :key => "some_key" )
+          client = double( :post => double(:success? => false, :body => ""), :system_token => "x", :host => "some_host", :key => "some_key" )
           subject.stub(:client).and_return(client)
         end
 

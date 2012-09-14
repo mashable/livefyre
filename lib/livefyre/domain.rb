@@ -90,7 +90,7 @@ module Livefyre
     # Raises [APIException] when response is not valid
     def add_owner(user)
       user = User.get_user(user, client)
-      response = client.put "/owners/?actor_token=#{CGI.escape user.token}"
+      response = client.post "/owners/?actor_token=#{CGI.escape client.system_token}", {:jid => user.jid}
       if response.success?
         true
       else
@@ -106,7 +106,7 @@ module Livefyre
     # Raises [APIException] when response is not valid
     def remove_owner(user)
       user = User.get_user(user, client)
-      response = client.delete "/owners/?actor_token=#{CGI.escape user.token}"
+      response = client.delete "/owner/#{user.jid}/?actor_token=#{CGI.escape client.system_token}"
       if response.success?
         true
       else
