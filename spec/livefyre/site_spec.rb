@@ -33,6 +33,7 @@ describe Livefyre::Site do
       context "on success" do
         before do
           client = double( :post => double(:success? => true), :system_token => "x", :host => "some_host", :key => "some_key", :jid => "foo@bar.com" )
+          client.should_receive(:get).with("/site/my.site/", {:actor_token => "x"}).and_return(double(:success? => true, :body => "{}"))
           subject.stub(:client).and_return(client)
         end
 
@@ -42,9 +43,9 @@ describe Livefyre::Site do
       end
 
       context "on failure" do
+        let(:client) { double( :system_token => "x" ) }
         before do
           response = double(:success? => false, :body => "")
-          client = double( :system_token => "x" )
           client.should_receive(:post).with("/site/my.site/", {:actor_token => "x", :postback_url => "http://foo.bar/"}).and_return(response)
           subject.stub(:client).and_return(client)
         end

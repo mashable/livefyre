@@ -13,17 +13,32 @@ module Livefyre
 
     # Public: Get a list of properties for this site
     #
+    # reload - Force a reload when set
+    #
     # Returns [Hash] Site properties
     # Raises [APIException] when response is not valid
-    def properties
-      return @options unless @options.nil? or @options.empty?
+    def properties(reload = false)
+      return @options unless @options.nil? or @options.empty? or reload
       response = client.get "/site/#{id}/", {:actor_token => client.system_token}
       if response.success?
-        @options = JSON.parse response.body if @options.nil? or @options.empty?
+        @options = JSON.parse response.body
         @secret = options["api_secret"]
+        @options
       else
         raise APIException.new(response.body)
       end
+    end
+
+    def destroy!
+      response = client.delete "/site/#{id}/", {:actor_token => client.system_token}
+      puts response.inspect
+    end
+
+    # Public: Reload this site's properties from Livefyre
+    #
+    # Returns [Hash] of options
+    def reload
+      properties(true)
     end
 
     # Public: Set the postback URL for actions on this site
@@ -36,6 +51,7 @@ module Livefyre
     def set_postback_url(url)
       response = client.post "/site/#{id}/", {:actor_token => client.system_token, :postback_url => url}
       if response.success?
+        properties(true) rescue APIException nil
         true
       else
         raise APIException.new(response.body)
@@ -76,8 +92,8 @@ module Livefyre
     # Returns [Bool] true on success
     # Raises [APIException] when response is not valid
     def remove_owner(user)
-      uid = User.get_user_id(user)
-      response = client.delete "/site/#{id}/owner/#{client.jid uid}?actor_token=#{CGI.escape client.system_token}"
+      user = User.get_user(user, client)
+      response = client.delete "/site/#{id}/owner/#{user.jid}/?actor_token=#{CGI.escape client.system_token}"
       if response.success?
         true
       else
@@ -105,8 +121,8 @@ module Livefyre
     # Returns [Bool] true on success
     # Raises [APIException] when response is not valid
     def add_admin(user)
-      uid = User.get_user_id(user)
-      response = client.post "/site/#{id}/admins/?actor_token=#{CGI.escape client.system_token}", {:jid => client.jid(uid)}
+      user = User.get_user(user, client)
+      response = client.post "/site/#{id}/admins/?actor_token=#{CGI.escape client.system_token}", {:jid => user.jid}
       if response.success?
         true
       else
@@ -119,8 +135,8 @@ module Livefyre
     # Returns [Bool] true on success
     # Raises [APIException] when response is not valid
     def remove_admin(user)
-      uid = User.get_user_id(user)
-      response = client.delete "/site/#{id}/admin/#{client.jid uid}?actor_token=#{CGI.escape client.system_token}"
+      user = User.get_user(user, client)
+      response = client.delete "/site/#{id}/admin/#{user.jid}/?actor_token=#{CGI.escape client.system_token}"
       if response.success?
         true
       else
