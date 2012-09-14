@@ -23,4 +23,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "simplecov-rcov"
   gem.add_development_dependency "rails"
   gem.add_development_dependency "resque"
+  gem.add_development_dependency "yard"
+  gem.add_development_dependency "yard-tomdoc"
+  gem.add_development_dependency "redcarpet"
 end

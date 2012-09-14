@@ -8,3 +8,7 @@ rescue LoadError => e
 end
 
 task :default => :spec
+
+task :doc do
+  sh %{yard --plugin yard-tomdoc -o doc}
+end
