@@ -4,9 +4,9 @@ require File.expand_path('../lib/livefyre/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Mashable"]
   gem.email         = ["cheald@mashable.com"]
-  gem.description   = %q{TODO: Interface library for Livefyre's comment API}
-  gem.summary       = %q{TODO: Interface library for Livefyre's comment API}
-  gem.homepage      = ""
+  gem.description   = %q{Interface library for Livefyre's comment API with Rails helpers}
+  gem.summary       = %q{Interface library for Livefyre's comment API with Rails helpers}
+  gem.homepage      = "http://github.com/mashable/livefyre"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
