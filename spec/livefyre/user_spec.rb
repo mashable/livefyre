@@ -4,7 +4,7 @@ describe Livefyre::User do
   describe "#initialize" do
     context "when no client is passed" do
       it "should use the default client" do
-        Livefyre::User.new(123).client.should eql(Livefyre.client)
+        Livefyre::User.new(123).instance_variable_get("@client").should eql(Livefyre.client)
       end
     end
 
@@ -12,8 +12,8 @@ describe Livefyre::User do
       it "should use the passed client" do
         client = Livefyre::Client.new(:host => "x", :key => "x", :system_token => "x")
         Livefyre::User.new(123, client).tap do |user|
-          user.client.should eql client
-          user.client.should_not eql Livefyre.client
+          user.instance_variable_get("@client").should eql client
+          user.instance_variable_get("@client").should_not eql Livefyre.client
         end
       end
     end
@@ -42,14 +42,12 @@ describe Livefyre::User do
       subject { Livefyre::User.get_user("foobar", Livefyre.client) }
       it { should be_a Livefyre::User }
       its(:id) { should == "foobar" }
-      its(:client) { should == Livefyre.client }
     end
 
     context "should return a user when passed a User object" do
       subject { Livefyre::User.get_user( Livefyre::User.new("123", Object.new) , Livefyre.client) }
       it { should be_a Livefyre::User }
       its(:id) { should == "123" }
-      its(:client) { should == Livefyre.client }
     end
 
     it "should raise an exception when passed an invalid value" do
@@ -58,24 +56,19 @@ describe Livefyre::User do
   end
 
   context "an instance" do
-    subject { Livefyre::User.new(123) }
+    let(:client) { double("client", :system_token => "x", :host => "foo.bar", :key => "z") }
+    subject { Livefyre::User.new(123, client) }
 
     its(:jid) { should == "123@foo.bar" }
     its(:token) { should be_a String }
 
-    it "should decode a token" do
-      subject.client.validate(subject.token)["domain"].should == subject.client.host
-    end
-
     context "#push" do
       context "on success" do
         before do
-          client = double("client")
           client
             .should_receive(:post)
-            .with("/profiles/?actor_token=#{subject.client.system_token}&id=#{subject.id}", {:data => {:some => "data"}.to_json})
+            .with("/profiles/?actor_token=#{client.system_token}&id=#{subject.id}", {:data => {:some => "data"}.to_json})
             .and_return(double(:success? => true))
-          subject.client.stub(:http_client).and_return(client)
         end
 
         it "returns true" do
@@ -85,12 +78,10 @@ describe Livefyre::User do
 
       context "on failure" do
         before do
-          client = double("client")
           client
             .should_receive(:post)
-            .with("/profiles/?actor_token=#{subject.client.system_token}&id=#{subject.id}", {:data => {:some => "data"}.to_json})
+            .with("/profiles/?actor_token=#{client.system_token}&id=#{subject.id}", {:data => {:some => "data"}.to_json})
             .and_return(double(:success? => false, :body => "error"))
-          subject.client.stub(:http_client).and_return(client)
         end
 
         it "raises an APIException" do
@@ -100,16 +91,14 @@ describe Livefyre::User do
     end
 
     context "#refresh" do
-      let(:client) { double("client") }
-
       it "should post to the ping-to-pull endpoint" do
-        subject.client.should_receive(:post).with("/api/v3_0/user/#{subject.id}/refresh", {:lftoken => subject.client.system_token})
+        client.should_receive(:post).with("/api/v3_0/user/#{subject.id}/refresh", {:lftoken => client.system_token})
           .and_return( double(:success? => true) )
         subject.refresh.should == true
       end
 
       it "should raise an exception when it fails to post to the ping-to-pull endpoint" do
-        subject.client.should_receive(:post).with("/api/v3_0/user/#{subject.id}/refresh", {:lftoken => subject.client.system_token})
+        client.should_receive(:post).with("/api/v3_0/user/#{subject.id}/refresh", {:lftoken => client.system_token})
           .and_return( double(:success? => false, :body => "Temporal failure in the primary quantum induction matrix") )
         expect { subject.refresh.should }.to raise_error(Livefyre::APIException)
       end

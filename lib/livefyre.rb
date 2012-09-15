@@ -1,6 +1,7 @@
 require 'jwt'
 require 'faraday'
 require 'forwardable'
+require 'hmac-sha1'
 
 # Public: Toplevel Livefyre namespace
 module Livefyre
@@ -40,6 +41,9 @@ require File.expand_path("livefyre/client", File.dirname(__FILE__))
 require File.expand_path("livefyre/user", File.dirname(__FILE__))
 require File.expand_path("livefyre/domain", File.dirname(__FILE__))
 require File.expand_path("livefyre/site", File.dirname(__FILE__))
+require File.expand_path("livefyre/activity", File.dirname(__FILE__))
+require File.expand_path("livefyre/conversation", File.dirname(__FILE__))
+require File.expand_path("livefyre/comment", File.dirname(__FILE__))
 
 if defined?(Rails)
   require File.expand_path("livefyre/controller_extensions", File.dirname(__FILE__))

@@ -1,24 +1,29 @@
 module Livefyre
   # Public: Interface for dealing with Livefyre users by User ID.
   class User
-    attr_accessor :id, :client, :display_name
+    attr_accessor :id, :display_name
 
     # Public: Create a new Livefyre User proxy.
     #
     # id           - [String] ID of the user to proxy
     # client       - [Livefyre::Client] an instance of Livefyre::Client. If nil, the default client is used.
     # display_name - [String] The display name for this user (optional)
-    def initialize(id, client = nil, display_name = nil)
+    def initialize(id, client = nil, display_name = nil, args = {})
       @id = id
       @client = client || Livefyre.client
       @display_name = display_name
+      @options = args
+    end
+
+    def client=(client)
+      @client = client
     end
 
     # Internal - Fetch an internal Jabber-style ID for this user
     #
     # Returns [String] representation of this user
     def jid
-      "#{id}@#{client.host}"
+      "#{id}@#{@client.host}"
     end
 
     # Public: Creates a signed JWT token for this user
@@ -28,13 +33,13 @@ module Livefyre
     # Returns [String] token
     def token(max_age = 86400)
       data = {
-        :domain => client.host,
+        :domain => @client.host,
         :user_id => id,
         :expires => Time.now.to_i + max_age
       }.tap do |opts|
         opts[:display_name] = @display_name unless @display_name.nil?
       end
-      JWT.encode(data, client.key)
+      JWT.encode(data, @client.key)
     end
 
     # Public: Update this user's profile on Livefyre
@@ -44,7 +49,7 @@ module Livefyre
     # Returns [Bool] true on success
     # Raises [APIException] if the request failed
     def push(data)
-      result = client.post "/profiles/?actor_token=#{CGI.escape client.system_token}&id=#{id}", {:data => data.to_json}
+      result = @client.post "/profiles/?actor_token=#{CGI.escape @client.system_token}&id=#{id}", {:data => data.to_json}
       if result.success?
         true
       else
@@ -57,7 +62,7 @@ module Livefyre
     # Returns [Bool] true on success
     # Raises [APIException] if the request failed
     def refresh
-      result = client.post "/api/v3_0/user/#{id}/refresh", {:lftoken => client.system_token}
+      result = @client.post "/api/v3_0/user/#{id}/refresh", {:lftoken => @client.system_token}
       if result.success?
         true
       else

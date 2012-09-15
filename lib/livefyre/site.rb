@@ -29,16 +29,39 @@ module Livefyre
       end
     end
 
-    def destroy!
-      response = client.delete "/site/#{id}/", {:actor_token => client.system_token}
-      puts response.inspect
+    # Public: Fetches a feed of the site's latest activity.
+    #
+    # since_id - [Integer] If provided, will return feed items after the given feed item.
+    #
+    # Returns [Array<Activity>] List of feed activities
+    def feed(since_id = nil)
+      reload if secret.nil?
+      timestamp = Time.now.utc.to_i
+      sig = Base64.encode64 HMAC::SHA1.new(Base64.decode64 secret).update("sig_created=%s" % timestamp).digest
+      url = "/%s/" % ["site", id, "sync", since_id].compact.join("/")
+      response = client.get url, {:sig_created => timestamp, :sig => sig}
+      if response.success?
+        payload = JSON.parse(response.body).map {|item| Activity.new(client, item) }
+      else
+        raise APIException.new(response.body)
+      end
+    end
+
+    # Public: Fetches the latest comments from this site
+    #
+    # since_id - [Integer] If provided, will return feed items after the given comment.
+    #
+    # Returns: [Array<Comment>] List of comment
+    def comments
+      feed.select(&:comment?).map(&:comment)
     end
 
     # Public: Reload this site's properties from Livefyre
     #
-    # Returns [Hash] of options
+    # Returns self
     def reload
       properties(true)
+      self
     end
 
     # Public: Set the postback URL for actions on this site

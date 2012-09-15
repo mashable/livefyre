@@ -1,27 +1,13 @@
 defaultDelegate = (options) ->
   authDelegate = new fyre.conv.RemoteAuthDelegate()
-  authDelegate.login        = (handlers) ->
-    if options.login
-      options.login(handlers)
+  authDelegate[k] = v for k, v of options.auth
+  authDelegate
 
-  authDelegate.logout       = (handlers) ->
-    if options.logout
-      options.logout(handlers)
-  authDelegate.viewProfile  = (handlers, author) ->
-    if options.viewProfile
-      if options.viewProfile(handlers, author)
-        handlers.success()
-
-  authDelegate.editProfile  = (handlers, author) ->
-    if options.editProfile
-      if options.editProfile(handlers, author)
-        handlers.success()
-
-loadScriptAsync = null
+load = null
 (->
   __loadedScripts = []
   fjs = null
-  loadScriptAsync = (source, id, content, options) ->
+  load = (source, id, content, options) ->
     content = null if !content
     return if (document.getElementById(id))
     return if __loadedScripts[id]
@@ -38,11 +24,50 @@ loadScriptAsync = null
     js
 )()
 
-livefyreInitialized = false
+cookie = (token) ->
+  m = document.cookie.match(new RegExp(token + "=([^;]+)"))
+  if m then m[1] else null
+
+utils = (options) ->
+  obj =
+    startLogin: (url, width = 600, height = 400, callback = null) ->
+      left = (screen.width / 2) - (width / 2)
+      top = (screen.height / 2) - (height / 2)
+      popup = window.open url, name, "menubar=no,toolbar=no,status=no,width=#{width},height=#{height},toolbar=no,left=#{left},top=#{top}"
+      @finishCallback = callback
+      @startLoginPopup(popup)
+
+    startLoginPopup: (popup) ->
+      @tries = 0
+      @popup = popup
+      @timer = setInterval(=>
+        @tries += 1
+        @__checkLogin()
+      , 100)
+
+    __checkLogin: ->
+      token = cookie(options.cookie_name || "livefyre_utoken")
+      if @popup
+        try
+          if @popup.closed == false and @tries > 30 # 3 seconds
+             clearInterval(@timer)
+             @timer = null
+             @popup = null
+        catch err
+
+      if token
+        clearInterval(@timer)
+        @popup.close()
+        @popup = null
+        @timer = null
+        @finishCallback() if @finishCallback
+        window.fyre.conv.login(token)
+
+_initialized = false
 @initLivefyre = (options) ->
-  if livefyreInitialized
+  if _initialized
     throw "Livefyre has already been initialized"
-  livefyreInitialized = true
+  _initialized = true
   e = document.getElementById(options.element_id || "livefyre_comments")
   if e
     options.config ||=
@@ -62,11 +87,15 @@ livefyreInitialized = false
         authDelegate: options.delegate || defaultDelegate(options)
 
       fyre.conv.load opts, [options.config], ->
-        token = $.cookie(options.cookie_name || "livefyre_utoken")
+        token = cookie(options.cookie_name || "livefyre_utoken")
         if token
           try
             fyre.conv.login(token)
           catch error
             window.console.log "Error logging in:", e if window.console
 
-    element = loadScriptAsync "http://#{options.root}/wjs/v3.0/javascripts/livefyre.js", null, null, {"data-lf-domain": options.network}
+    element = load "http://#{options.root}/wjs/v3.0/javascripts/livefyre.js", null, null, {"data-lf-domain": options.network}
+    utils(options)
+
+  else
+    null

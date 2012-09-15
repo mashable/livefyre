@@ -50,6 +50,7 @@ module Livefyre
     #
     # Raises [JWT::DecodeError] if the token is invalid or missing.
     def validate_livefyre_request!
+      JWT::DecodeError if params[:lftoken].nil?
       token = JWT.decode params[:lftoken], Livefyre.client.key
       raise JWT::DecodeError unless token["domain"] == Livefyre.client.host
       return true

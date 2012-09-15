@@ -47,7 +47,7 @@ describe Livefyre::Client do
       end
 
       it "should have a reference to this client" do
-        @user.client.should == subject
+        @user.instance_variable_get("@client").should == subject
       end
     end
 
