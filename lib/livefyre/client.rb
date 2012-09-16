@@ -8,7 +8,7 @@ module Livefyre
     # Public: Valid scopes for #set_user_role
     SCOPES = %w(domain site conv)
 
-    attr_accessor :host, :key, :options, :system_token, :http_client
+    attr_accessor :host, :key, :options, :system_token, :http_client, :site_key, :quill, :stream, :bootstrap
 
     def_delegators :http_client, :get, :post, :delete, :put
 
@@ -23,6 +23,10 @@ module Livefyre
       @host = options.delete(:network) || options.delete(:host)
       raise "Invalid host" if @host.nil?
       @http_client = Faraday.new(:url => "http://#{@host}")
+      @quill = Faraday.new(:url => "http://quill.#{@host}")
+      @stream = Faraday.new(:url => "http://stream.#{@host}")
+      @bootstrap = Faraday.new(:url => "http://bootstrap.#{@host}")
+      @site_key = options[:site_key]
 
       @key = options.delete(:secret) || options.delete(:key) || options.delete(:network_key)
       raise "Invalid secret key" if @key.nil?
@@ -107,11 +111,30 @@ module Livefyre
       "%s@%s" % [id, host]
     end
 
+    # Internal: Identifier to use to uniquely identify this client.
+    #
+    # Returns string ID
+    def identifier
+      @identifier ||= "RubyLib-#{Process.pid}-#{local_ip}-#{object_id}"
+    end
+
     # Internal: Returns a cleaner string representation of this object
     #
     # Returns [String] representation of this class
     def to_s
       "#<#{self.class.name}:0x#{object_id.to_s(16).rjust(14, "0")} host='#{host}' key='#{key}'>"
+    end
+
+    private
+
+    def local_ip
+      orig, Socket.do_not_reverse_lookup = Socket.do_not_reverse_lookup, true  # turn off reverse DNS resolution temporarily
+      UDPSocket.open do |s|
+        s.connect '64.233.187.99', 1
+        s.addr.last
+      end
+    ensure
+      Socket.do_not_reverse_lookup = orig
     end
   end
 end

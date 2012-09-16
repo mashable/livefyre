@@ -55,5 +55,12 @@ module Livefyre
       raise JWT::DecodeError unless token["domain"] == Livefyre.client.host
       return true
     end
+
+    # Public: Used in your postback handler to parse the Livefyre postback body into an Activity stream for processing
+    #
+    # Returns [Array<Activity>] List of activities included in this postback.
+    def parse_livefyre_postback
+      JSON.parse(request.body).map {|item| Activity.new(client, item) }
+    end
   end
 end

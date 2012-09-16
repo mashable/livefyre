@@ -22,6 +22,7 @@ module Livefyre
       response = client.get "/site/#{id}/", {:actor_token => client.system_token}
       if response.success?
         @options = JSON.parse response.body
+        puts response.body
         @secret = options["api_secret"]
         @options
       else
@@ -52,8 +53,8 @@ module Livefyre
     # since_id - [Integer] If provided, will return feed items after the given comment.
     #
     # Returns: [Array<Comment>] List of comment
-    def comments
-      feed.select(&:comment?).map(&:comment)
+    def comments(since = nil)
+      feed(since).select(&:comment?).map(&:comment)
     end
 
     # Public: Reload this site's properties from Livefyre
@@ -165,6 +166,13 @@ module Livefyre
       else
         raise APIException.new(response.body)
       end
+    end
+
+    # Public: Create a conversation collection on this site
+    #
+    # Returns [Conversation]
+    def create_conversation(article_id, title, link, tags = nil)
+      Conversation.create(client, article_id, title, link, tags)
     end
 
     # Internal: Returns a cleaner string representation of this object

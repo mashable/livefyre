@@ -15,6 +15,25 @@ module Livefyre
       @options = args
     end
 
+    # Public: Retrieve user information and recent comments for this user from Livefyre
+    #
+    # Returns [Hash] of profile data
+    # Raises [JSON::ParserError] if the returned data cannot be parsed
+    # Raises [APIException] if the API does not return a valid response
+    def profile
+      response = @client.get "/profile/#{id}/", {:actor_token => token}
+      if response.success?
+        begin
+          JSON.parse(response.body)["data"]
+        rescue JSON::ParserError => e
+          raise APIException.new("Parse error: #{e.message}")
+        end
+      else
+        raise APIException.new(result.body)
+      end
+    end
+
+    # Public: Setter for the client to associate with this user
     def client=(client)
       @client = client
     end
@@ -68,6 +87,24 @@ module Livefyre
       else
         raise APIException.new(result.body)
       end
+    end
+
+    # Public: Follow the given conversation
+    #
+    # conversation - [Conversation] to follow
+    # Returns [Boolean] true on success
+    # Raises [APIException] on failure
+    def follow_conversation(conversation)
+      conversation.follow_as self
+    end
+
+    # Public: Unfollow the given conversation
+    #
+    # conversation - [Conversation] to unfollow
+    # Returns [Boolean] true on success
+    # Raises [APIException] on failure
+    def unfollow_conversation(conversation)
+      conversation.unfollow_as self
     end
 
     # Public: Coerce a string or [User] into a user ID

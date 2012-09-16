@@ -30,6 +30,7 @@ cookie = (token) ->
 
 utils = (options) ->
   obj =
+    load: load
     startLogin: (url, width = 600, height = 400, callback = null) ->
       left = (screen.width / 2) - (width / 2)
       top = (screen.height / 2) - (height / 2)
@@ -82,6 +83,7 @@ _initialized = false
     options.root    ||= e.getAttribute("data-root")
 
     @FYRE_LOADED_CB = ->
+      options.preLoad(fyre) if options.preLoad
       opts =
         network: options.network
         authDelegate: options.delegate || defaultDelegate(options)
@@ -94,7 +96,8 @@ _initialized = false
           catch error
             window.console.log "Error logging in:", e if window.console
 
-    element = load "http://#{options.root}/wjs/v3.0/javascripts/livefyre.js", null, null, {"data-lf-domain": options.network}
+    unless options.manualLoad
+      element = load "http://#{options.root}/wjs/v3.0/javascripts/livefyre.js", null, null, {"data-lf-domain": options.network}
     utils(options)
 
   else
