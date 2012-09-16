@@ -191,6 +191,31 @@ by guessing at field names.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#parse_livefyre_postback-instance_method" title="#parse_livefyre_postback (instance method)">- (Array&lt;Activity&gt;) <strong>parse_livefyre_postback</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Used in your postback handler to parse the Livefyre postback body into an
+Activity stream for processing.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#validate_livefyre_request%21-instance_method" title="#validate_livefyre_request! (instance method)">- (Object) <strong>validate_livefyre_request!</strong> </a>
     
 
@@ -451,6 +476,66 @@ out</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="parse_livefyre_postback-instance_method">
+  
+    - (<tt>Array&lt;<span class='object_link'><a href="Activity.html" title="Livefyre::Activity (class)">Activity</a></span>&gt;</tt>) <strong>parse_livefyre_postback</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Used in your postback handler to parse the Livefyre postback body into an
+Activity stream for processing</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Activity.html" title="Livefyre::Activity (class)">Activity</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>List of activities included in this postback.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/livefyre/controller_extensions.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_livefyre_postback'>parse_livefyre_postback</span>
+  <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_item'>item</span><span class='op'>|</span> <span class='const'>Activity</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='comma'>,</span> <span class='id identifier rubyid_item'>item</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="validate_livefyre_request!-instance_method">
   
     - (<tt>Object</tt>) <strong>validate_livefyre_request!</strong> 
@@ -498,12 +583,14 @@ out</p>
 53
 54
 55
-56</pre>
+56
+57</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/livefyre/controller_extensions.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate_livefyre_request!'>validate_livefyre_request!</span>
+  <span class='const'>JWT</span><span class='op'>::</span><span class='const'>DecodeError</span> <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:lftoken</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
   <span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='const'>JWT</span><span class='period'>.</span><span class='id identifier rubyid_decode'>decode</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:lftoken</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='const'>Livefyre</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_key'>key</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>JWT</span><span class='op'>::</span><span class='const'>DecodeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_token'>token</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>domain</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='const'>Livefyre</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span>
   <span class='kw'>return</span> <span class='kw'>true</span>
@@ -518,7 +605,7 @@ out</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Sep 13 18:50:22 2012 by
+  Generated on Sun Sep 16 01:27:50 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.2.1 (ruby-1.9.3).
 </div>
