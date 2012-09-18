@@ -101,6 +101,26 @@ You can even have the gem do your ping updated asynchronously with Resque
 
 This will enqueue a ping-to-pull job in the "livefyre" queue. Make sure you have a worker running that'll handle that queue!
 
+### Handling Postbacks
+
+To handle postbacks, you'll need to set up a postback route:
+
+    match '/livefyre/postback',       to: 'comments#postback'
+
+You'll also need to tell Livefyre about this URL (similar to the ping-to-pull URL, via a console or elsewhere)
+
+    Livefyre::Site.new.set_postback_url "http://foo.com/livefyre/postback"
+
+Finally, the gem provides a helper for validating Livefyre postback requests.
+
+    class CommentsController < ApplicationController
+      validate_postback_signature :only => [:postback], :key => "your_site_key"
+
+      def postback
+        # Handle the postback
+      end
+    end
+
 ### View integration
 
 

@@ -62,5 +62,14 @@ module Livefyre
     def parse_livefyre_postback
       JSON.parse(request.body).map {|item| Activity.new(client, item) }
     end
+
+    module ClassMethods
+      def validate_postback_signature(options = {})
+        key = options.delete :key
+        before_filter Proc.new {|c|
+          Livefyre::Site.validate_signature.validate_signature(c.params[:sig], c.params[:sig_created], key)
+        }, options
+      end
+    end
   end
 end

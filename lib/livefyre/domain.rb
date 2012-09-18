@@ -22,6 +22,40 @@ module Livefyre
       end
     end
 
+    # Public: Search conversations on this domain
+    #
+    # query   - string to query for
+    # options - [Hash] of options
+    # :fields - list of fields to search. Default [:article, :title, :body]
+    # :sort   - Sort order for options. Valid values are [:relevance, :created, :updated, :hotness, :ncomments]. Default is :relevance
+    # :fields - List of fields to return in the result. Valid values are: article_id, site_id, domain_id, title, published, updated, author, url, ncomment, nuser, annotation, nlp, hotness, hottest_value, hottest_time, peak, peak_value, peak_time, comments:5, users:5, comment_state, hit_field, dispurl, relevancy
+    # :max    - Maximum number of fields to return
+    # :since  - [DateTime] Minimum date of results to return
+    # :until  - [DateTime] Maximum date of results to return
+    # :sites  - Array of Sites or site IDs to limit results to. Maximum 5 sites.
+    # :page   - Page of results to fetch. Default 1.
+    #
+    # Returns [Array<Conversation>] An array of matching conversations
+    # Raises [APIException] when response is not valid
+    def search_conversations(query, options = {})
+      query = {}
+      query[:return_fields] = options[:fields] if options[:fields]
+      query[:fields]   = options[:fields] || [:article, :title, :body]
+      query[:order]    = options[:sort] || "relevance"
+      query[:max]      = options[:max].to_i if options[:max]
+      query[:since]    = options[:since].utc.iso8601 if options[:since]
+      query[:until]    = options[:until].utc.iso8601 if options[:until]
+      query[:sites]    = options[:sites].map {|s| s.is_a?(Site) ? s.id : s.to_i }
+      query[:cursor]   = (query[:max] || 10).to_i * options[:page].to_i if options[:page]
+      query[:apitoken] = client.system_token ## TODO: I expect this is wrong; this param seems to expect the old-style API token.
+      response = client.search.get "/api/v1.1/public/search/convs/", query
+      if response.success?
+        JSON.parse(response.body)
+      else
+        raise APIException.new(response.body)
+      end
+    end
+
     # Public: Get a list of users on this domain
     #
     # Returns [Array<User>] An array of {User users}

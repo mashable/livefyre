@@ -1,4 +1,7 @@
 module Livefyre
+  # Public: Exception representing a failure to validate a signature
+  class InvalidSignatureException < Exception; end
+
   # Public: An object representing a Livefyre site belonging to a Livefyre domain
   class Site
     attr_accessor :client, :secret, :options, :id
@@ -9,6 +12,25 @@ module Livefyre
       @client = client || Livefyre.client
       @options = options
       @secret = options["api_secret"]
+    end
+
+    # Public: Search conversations on this domain
+    #
+    # query   - string to query for
+    # options - [Hash] of options
+    # :fields - list of fields to search. Default [:article, :title, :body]
+    # :sort   - Sort order for options. Valid values are [:relevance, :created, :updated, :hotness, :ncomments]. Default is :relevance
+    # :fields - List of fields to return in the result. Valid values are: article_id, site_id, domain_id, title, published, updated, author, url, ncomment, nuser, annotation, nlp, hotness, hottest_value, hottest_time, peak, peak_value, peak_time, comments:5, users:5, comment_state, hit_field, dispurl, relevancy
+    # :max    - Maximum number of fields to return
+    # :since  - [DateTime] Minimum date of results to return
+    # :until  - [DateTime] Maximum date of results to return
+    # :page   - Page of results to fetch. Default 1.
+    #
+    # Returns [Array<Conversation>] An array of matching conversations
+    # Raises [APIException] when response is not valid
+    def search_conversations(query, options = {})
+      options[:sites] = [self]
+      Domain.new(@client).search_conversations(query, options)
     end
 
     # Public: Get a list of properties for this site
@@ -180,6 +202,25 @@ module Livefyre
     # Returns [String] representation of this class
     def to_s
       "#<#{self.class.name}:0x#{object_id.to_s(16).rjust(14, "0")} id='#{id}' secret='#{secret}' options=#{options.inspect}>"
+    end
+
+    # Public: Validate a signature as passed by the Livefyre postback service
+    #
+    # Returns [Bool]
+    # Raises [InvalidSignatureException] on failure
+    def self.validate_signature(sig, created_at, secret)
+      raise InvalidSignatureException.new "Missing sig" if sig.nil?
+      raise InvalidSignatureException.new "Missing sig_created" if created_at.nil?
+      raise InvalidSignatureException.new "Missing site key" if secret.nil?
+
+      t = Time.at(created_at.to_i)
+      utc = Time.utc(t.year, t.month, t.day, t.hour + 7, t.min, t.sec)
+      # raise InvalidSignatureException.new "Invalid timestamp" if (Time.now - utc).abs > 300  # Timestamp is more than 5 minutes out of date.
+
+      check = Base64.encode64 HMAC::SHA1.new(Base64.decode64 secret).update("sig_created=%s" % created_at).digest
+      puts check
+      raise InvalidSignatureException.new "Invalid signature" if check != sig
+      return sig == check
     end
   end
 end

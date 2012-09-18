@@ -8,7 +8,7 @@ module Livefyre
     # Public: Valid scopes for #set_user_role
     SCOPES = %w(domain site conv)
 
-    attr_accessor :host, :key, :options, :system_token, :http_client, :site_key, :quill, :stream, :bootstrap
+    attr_accessor :host, :key, :options, :system_token, :http_client, :site_key, :quill, :stream, :bootstrap, :search
 
     def_delegators :http_client, :get, :post, :delete, :put
 
@@ -25,6 +25,7 @@ module Livefyre
       @http_client = Faraday.new(:url => "http://#{@host}")
       @quill = Faraday.new(:url => "http://quill.#{@host}")
       @stream = Faraday.new(:url => "http://stream.#{@host}")
+      @search = Faraday.new(:url => "http://search.#{@host}")
       @bootstrap = Faraday.new(:url => "http://bootstrap.#{@host}")
       @site_key = options[:site_key]
 
