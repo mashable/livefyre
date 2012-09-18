@@ -44,7 +44,6 @@ module Livefyre
       response = client.get "/site/#{id}/", {:actor_token => client.system_token}
       if response.success?
         @options = JSON.parse response.body
-        puts response.body
         @secret = options["api_secret"]
         @options
       else
@@ -218,7 +217,6 @@ module Livefyre
       # raise InvalidSignatureException.new "Invalid timestamp" if (Time.now - utc).abs > 300  # Timestamp is more than 5 minutes out of date.
 
       check = Base64.encode64 HMAC::SHA1.new(Base64.decode64 secret).update("sig_created=%s" % created_at).digest
-      puts check
       raise InvalidSignatureException.new "Invalid signature" if check != sig
       return sig == check
     end
