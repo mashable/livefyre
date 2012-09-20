@@ -6,7 +6,7 @@
 <title>
   Module: Livefyre::Controller
   
-    &mdash; Documentation by YARD 0.8.2.1
+    &mdash; Documentation by YARD 0.8.1
   
 </title>
 
@@ -91,8 +91,8 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Controller extensions for Rails. Adds methods to be called from your
-controller to integrate with Livefyre.</p>
+<p>Public: Controller extensions for Rails. Adds methods to be called from
+your controller to integrate with Livefyre.</p>
 
 
   </div>
@@ -100,7 +100,17 @@ controller to integrate with Livefyre.</p>
 <div class="tags">
   
 
-</div>
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Controller/ClassMethods.html" title="Livefyre::Controller::ClassMethods (module)">ClassMethods</a></span>
+    
+  
+    
+  
+</p>
+
 
 
 
@@ -118,7 +128,7 @@ controller to integrate with Livefyre.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#livefire_profile-instance_method" title="#livefire_profile (instance method)">- (Hash) <strong>livefire_profile</strong>(user, values = {}) </a>
+      <a href="#livefire_profile-instance_method" title="#livefire_profile (instance method)">- (Object) <strong>livefire_profile</strong>(user, values = {}) </a>
     
 
     
@@ -133,8 +143,8 @@ controller to integrate with Livefyre.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Attempt to generate valid Livefire profile dump from the passed user record
-by guessing at field names.</p>
+<p>Public: Attempt to generate valid Livefire profile dump from the passed
+user record by guessing at field names.</p>
 </div></span>
   
 </li>
@@ -158,7 +168,7 @@ by guessing at field names.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Creates the Livefyre session cookies.</p>
+<p>Public: Creates the Livefyre session cookies.</p>
 </div></span>
   
 </li>
@@ -182,7 +192,7 @@ by guessing at field names.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Destroys the Livefyre session cookies.</p>
+<p>Public: Destroys the Livefyre session cookies.</p>
 </div></span>
   
 </li>
@@ -191,7 +201,7 @@ by guessing at field names.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#parse_livefyre_postback-instance_method" title="#parse_livefyre_postback (instance method)">- (Array&lt;Activity&gt;) <strong>parse_livefyre_postback</strong> </a>
+      <a href="#parse_livefyre_postback-instance_method" title="#parse_livefyre_postback (instance method)">- (Object) <strong>parse_livefyre_postback</strong> </a>
     
 
     
@@ -206,8 +216,8 @@ by guessing at field names.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Used in your postback handler to parse the Livefyre postback body into an
-Activity stream for processing.</p>
+<p>Public: Used in your postback handler to parse the Livefyre postback body
+into an Activity stream for processing.</p>
 </div></span>
   
 </li>
@@ -231,7 +241,8 @@ Activity stream for processing.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Check the validity of the JWT that Livefyre sends with pull requests.</p>
+<p>Public: Check the validity of the JWT that Livefyre sends with pull
+requests.</p>
 </div></span>
   
 </li>
@@ -250,7 +261,7 @@ Activity stream for processing.</p>
       <div class="method_details first">
   <h3 class="signature first" id="livefire_profile-instance_method">
   
-    - (<tt>Hash</tt>) <strong>livefire_profile</strong>(user, values = {}) 
+    - (<tt>Object</tt>) <strong>livefire_profile</strong>(user, values = {}) 
   
 
   
@@ -259,70 +270,20 @@ Activity stream for processing.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Attempt to generate valid Livefire profile dump from the passed user record
-by guessing at field names.</p>
+<p>Public: Attempt to generate valid Livefire profile dump from the passed
+user record by guessing at field names.</p>
+
+<p>user   - The user record to generate data from. Assumes it's
+ActiveModel-ish. values - [Hash] of values to force values for, rather than
+guessing at.</p>
+
+<p>Returns [Hash] suitable for conversion to JSON</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>user</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The user record to generate data from. Assumes it's ActiveModel-ish.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>values</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>{}</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>of values to force values for, rather than guessing at.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>suitable for conversion to JSON</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -379,8 +340,8 @@ by guessing at field names.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Creates the Livefyre session cookies. Should be called when the user logs
-in.</p>
+<p>Public: Creates the Livefyre session cookies. Should be called when the
+user logs in.</p>
 
 
   </div>
@@ -443,8 +404,8 @@ in.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Destroys the Livefyre session cookies. Should be called when the user logs
-out</p>
+<p>Public: Destroys the Livefyre session cookies. Should be called when the
+user logs out</p>
 
 
   </div>
@@ -478,7 +439,7 @@ out</p>
       <div class="method_details ">
   <h3 class="signature " id="parse_livefyre_postback-instance_method">
   
-    - (<tt>Array&lt;<span class='object_link'><a href="Activity.html" title="Livefyre::Activity (class)">Activity</a></span>&gt;</tt>) <strong>parse_livefyre_postback</strong> 
+    - (<tt>Object</tt>) <strong>parse_livefyre_postback</strong> 
   
 
   
@@ -487,32 +448,17 @@ out</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Used in your postback handler to parse the Livefyre postback body into an
-Activity stream for processing</p>
+<p>Public: Used in your postback handler to parse the Livefyre postback body
+into an Activity stream for processing</p>
+
+<p>Returns [Array&lt;Activity&gt;] List of activities included in this
+postback.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Activity.html" title="Livefyre::Activity (class)">Activity</a></span>&gt;</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>List of activities included in this postback.</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -547,7 +493,10 @@ Activity stream for processing</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Check the validity of the JWT that Livefyre sends with pull requests.</p>
+<p>Public: Check the validity of the JWT that Livefyre sends with pull
+requests.</p>
+
+<p>Raises [JWT::DecodeError] if the token is invalid or missing.</p>
 
 
   </div>
@@ -563,11 +512,6 @@ Activity stream for processing</p>
         <span class='type'>(<tt>JWT::DecodeError</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>if the token is invalid or missing.</p>
-</div>
       
     </li>
   
@@ -605,9 +549,9 @@ Activity stream for processing</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Sep 16 01:27:50 2012 by
+  Generated on Thu Sep 20 15:21:49 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.2.1 (ruby-1.9.3).
+  0.8.1 (ruby-1.9.3).
 </div>
 
   </body>

@@ -6,7 +6,7 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.8.2.1
+    &mdash; Documentation by YARD 0.8.1
   
 </title>
 
@@ -176,6 +176,29 @@ you may do it any other way you please, too. Livefyre will substitute the string
 
 <p>This will enqueue a ping-to-pull job in the &quot;livefyre&quot; queue. Make sure you have a worker running that&#39;ll handle that queue!</p>
 
+<h3>Handling Postbacks</h3>
+
+<p>To handle postbacks, you&#39;ll need to set up a postback route:</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_match'>match</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/livefyre/postback</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>       <span class='label'>to:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>comments#postback</span><span class='tstring_end'>'</span></span>
+</code></pre>
+
+<p>You&#39;ll also need to tell Livefyre about this URL (similar to the ping-to-pull URL, via a console or elsewhere)</p>
+
+<pre class="code ruby"><code><span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>Site</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_set_postback_url'>set_postback_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://foo.com/livefyre/postback</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<p>Finally, the gem provides a helper for validating Livefyre postback requests.</p>
+
+<pre class="code ruby"><code><span class='kw'>class</span> <span class='const'>CommentsController</span> <span class='op'>&lt;</span> <span class='const'>ApplicationController</span>
+  <span class='id identifier rubyid_validate_postback_signature'>validate_postback_signature</span> <span class='symbol'>:only</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:postback</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>your_site_key</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_postback'>postback</span>
+    <span class='comment'># Handle the postback
+</span>  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
 <h3>View integration</h3>
 
 <p>In the location that you want to use your comment form, include something like the following:</p>
@@ -227,9 +250,9 @@ you may do it any other way you please, too. Livefyre will substitute the string
 </div></div>
 
     <div id="footer">
-  Generated on Sun Sep 16 01:27:50 2012 by
+  Generated on Thu Sep 20 15:21:49 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.2.1 (ruby-1.9.3).
+  0.8.1 (ruby-1.9.3).
 </div>
 
   </body>

@@ -6,7 +6,7 @@
 <title>
   Class: Livefyre::Comment
   
-    &mdash; Documentation by YARD 0.8.2.1
+    &mdash; Documentation by YARD 0.8.1
   
 </title>
 
@@ -102,7 +102,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Proxy object for a [Comment] on a [Livefyre::Conversation]</p>
+<p>Public: Proxy object for a [Comment] on a [Livefyre::Conversation]</p>
 
 
   </div>
@@ -140,7 +140,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute body.</p>
+</div></span>
   
 </li>
 
@@ -165,7 +167,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute conversation.</p>
+</div></span>
   
 </li>
 
@@ -190,7 +194,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute created_at.</p>
+</div></span>
   
 </li>
 
@@ -215,7 +221,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute id.</p>
+</div></span>
   
 </li>
 
@@ -240,7 +248,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute ip.</p>
+</div></span>
   
 </li>
 
@@ -265,7 +275,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute parent_id.</p>
+</div></span>
   
 </li>
 
@@ -290,7 +302,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute user.</p>
+</div></span>
   
 </li>
 
@@ -311,7 +325,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create-class_method" title="create (class method)">+ (Comment) <strong>create</strong>(client, user, conversation, body, reply_to = nil) </a>
+      <a href="#create-class_method" title="create (class method)">+ (Object) <strong>create</strong>(client, user, conversation, body, reply_to = nil) </a>
     
 
     
@@ -326,7 +340,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>create a new comment on a conversation.</p>
+<p>Public: create a new comment on a conversation.</p>
 </div></span>
   
 </li>
@@ -344,7 +358,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#content_type-instance_method" title="#content_type (instance method)">- (Enum&lt;CONTENT_TYPES&gt;) <strong>content_type</strong> </a>
+      <a href="#content_type-instance_method" title="#content_type (instance method)">- (Object) <strong>content_type</strong> </a>
     
 
     
@@ -359,7 +373,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Get the comment content type as a string.</p>
+<p>Public: Get the comment content type as a string.</p>
 </div></span>
   
 </li>
@@ -368,7 +382,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#content_type_id-instance_method" title="#content_type_id (instance method)">- (Integer) <strong>content_type_id</strong> </a>
+      <a href="#content_type_id-instance_method" title="#content_type_id (instance method)">- (Object) <strong>content_type_id</strong> </a>
     
 
     
@@ -383,7 +397,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Get the comment visibility as an integer.</p>
+<p>Public: Get the comment visibility as an integer.</p>
 </div></span>
   
 </li>
@@ -392,7 +406,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#delete%21-instance_method" title="#delete! (instance method)">- (Boolean) <strong>delete!</strong> </a>
+      <a href="#delete%21-instance_method" title="#delete! (instance method)">- (Object) <strong>delete!</strong> </a>
     
 
     
@@ -407,7 +421,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Delete this comment.</p>
+<p>Public: Delete this comment.</p>
 </div></span>
   
 </li>
@@ -431,7 +445,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Flag a comment.</p>
+<p>Public: Flag a comment.</p>
 </div></span>
   
 </li>
@@ -466,7 +480,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#like%21-instance_method" title="#like! (instance method)">- (Boolean) <strong>like!</strong>(user) </a>
+      <a href="#like%21-instance_method" title="#like! (instance method)">- (Object) <strong>like!</strong>(user) </a>
     
 
     
@@ -481,7 +495,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Likes a comment as the passed user.</p>
+<p>Public: Likes a comment as the passed user.</p>
 </div></span>
   
 </li>
@@ -490,7 +504,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#source-instance_method" title="#source (instance method)">- (Enum&lt;SOURCES&gt;) <strong>source</strong> </a>
+      <a href="#source-instance_method" title="#source (instance method)">- (Object) <strong>source</strong> </a>
     
 
     
@@ -505,7 +519,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Get the comment source as a string.</p>
+<p>Public: Get the comment source as a string.</p>
 </div></span>
   
 </li>
@@ -514,7 +528,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#source_id-instance_method" title="#source_id (instance method)">- (Integer) <strong>source_id</strong> </a>
+      <a href="#source_id-instance_method" title="#source_id (instance method)">- (Object) <strong>source_id</strong> </a>
     
 
     
@@ -529,7 +543,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Get the comment source as an integer.</p>
+<p>Public: Get the comment source as an integer.</p>
 </div></span>
   
 </li>
@@ -538,7 +552,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (Object) <strong>to_s</strong> </a>
     
 
     
@@ -549,11 +563,11 @@
   
   
   
-  <span class="private note title">private</span>
+  
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns a cleaner string representation of this object.</p>
+<p>Internal: Returns a cleaner string representation of this object.</p>
 </div></span>
   
 </li>
@@ -562,7 +576,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#unlike%21-instance_method" title="#unlike! (instance method)">- (Boolean) <strong>unlike!</strong>(user) </a>
+      <a href="#unlike%21-instance_method" title="#unlike! (instance method)">- (Object) <strong>unlike!</strong>(user) </a>
     
 
     
@@ -577,7 +591,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Unlikes a comment as the passed user.</p>
+<p>Public: Unlikes a comment as the passed user.</p>
 </div></span>
   
 </li>
@@ -586,7 +600,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#update-instance_method" title="#update (instance method)">- (Boolean) <strong>update</strong>(body) </a>
+      <a href="#update-instance_method" title="#update (instance method)">- (Object) <strong>update</strong>(body) </a>
     
 
     
@@ -601,7 +615,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Update this comment's content.</p>
+<p>Public: Update this comment's content.</p>
 </div></span>
   
 </li>
@@ -610,7 +624,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#visibility-instance_method" title="#visibility (instance method)">- (Enum&lt;VISIBILITIES&gt;) <strong>visibility</strong> </a>
+      <a href="#visibility-instance_method" title="#visibility (instance method)">- (Object) <strong>visibility</strong> </a>
     
 
     
@@ -625,7 +639,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Get the comment visibility as a string.</p>
+<p>Public: Get the comment visibility as a string.</p>
 </div></span>
   
 </li>
@@ -634,7 +648,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#visibility_id-instance_method" title="#visibility_id (instance method)">- (Integer) <strong>visibility_id</strong> </a>
+      <a href="#visibility_id-instance_method" title="#visibility_id (instance method)">- (Object) <strong>visibility_id</strong> </a>
     
 
     
@@ -649,7 +663,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Get the comment visibility as an integer.</p>
+<p>Public: Get the comment visibility as an integer.</p>
 </div></span>
   
 </li>
@@ -725,6 +739,7 @@
     
       
       <span id="body=-instance_method"></span>
+      <span id="body-instance_method"></span>
       <div class="method_details first">
   <h3 class="signature first" id="body-instance_method">
   
@@ -737,6 +752,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute body</p>
+
 
   </div>
 </div>
@@ -766,6 +783,7 @@
     
       
       <span id="conversation=-instance_method"></span>
+      <span id="conversation-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="conversation-instance_method">
   
@@ -778,6 +796,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute conversation</p>
+
 
   </div>
 </div>
@@ -807,6 +827,7 @@
     
       
       <span id="created_at=-instance_method"></span>
+      <span id="created_at-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="created_at-instance_method">
   
@@ -819,6 +840,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute created_at</p>
+
 
   </div>
 </div>
@@ -848,6 +871,7 @@
     
       
       <span id="id=-instance_method"></span>
+      <span id="id-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="id-instance_method">
   
@@ -860,6 +884,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute id</p>
+
 
   </div>
 </div>
@@ -889,6 +915,7 @@
     
       
       <span id="ip=-instance_method"></span>
+      <span id="ip-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="ip-instance_method">
   
@@ -901,6 +928,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute ip</p>
+
 
   </div>
 </div>
@@ -930,6 +959,7 @@
     
       
       <span id="parent_id=-instance_method"></span>
+      <span id="parent_id-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="parent_id-instance_method">
   
@@ -942,6 +972,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute parent_id</p>
+
 
   </div>
 </div>
@@ -971,6 +1003,7 @@
     
       
       <span id="user=-instance_method"></span>
+      <span id="user-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="user-instance_method">
   
@@ -983,6 +1016,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute user</p>
+
 
   </div>
 </div>
@@ -1020,7 +1055,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="create-class_method">
   
-    + (<tt><span class='object_link'><a href="" title="Livefyre::Comment (class)">Comment</a></span></tt>) <strong>create</strong>(client, user, conversation, body, reply_to = nil) 
+    + (<tt>Object</tt>) <strong>create</strong>(client, user, conversation, body, reply_to = nil) 
   
 
   
@@ -1029,112 +1064,19 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>create a new comment on a conversation</p>
+<p>Public: create a new comment on a conversation</p>
+
+<p>client       - [Client] representing the site to use when creating the
+conversation user         - [User] to create the comment as conversation -
+[Conversation] to create body         - [String] Comment body</p>
+
+<p>Returns [Comment] Raises [APIException] when the API call fails</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>client</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Client.html" title="Livefyre::Client (class)">Client</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>representing the site to use when creating the conversation</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>user</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>to create the comment as</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>conversation</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Conversation.html" title="Livefyre::Conversation (class)">Conversation</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>to create</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>body</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Comment body</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Livefyre::Comment (class)">Comment</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>when the API call fails</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1206,7 +1148,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="content_type-instance_method">
   
-    - (<tt>Enum&lt;<span class='object_link'><a href="#CONTENT_TYPES-constant" title="Livefyre::Comment::CONTENT_TYPES (constant)">CONTENT_TYPES</a></span>&gt;</tt>) <strong>content_type</strong> 
+    - (<tt>Object</tt>) <strong>content_type</strong> 
   
 
   
@@ -1215,28 +1157,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get the comment content type as a string.</p>
+<p>Public: Get the comment content type as a string.</p>
 
 <pre class="code ruby"><code>Currently only populated when created via ::create</code></pre>
+
+<p>Returns [Enum&lt;CONTENT_TYPES&gt;]</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Enum&lt;<span class='object_link'><a href="#CONTENT_TYPES-constant" title="Livefyre::Comment::CONTENT_TYPES (constant)">CONTENT_TYPES</a></span>&gt;</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1262,7 +1193,7 @@
       <div class="method_details ">
   <h3 class="signature " id="content_type_id-instance_method">
   
-    - (<tt>Integer</tt>) <strong>content_type_id</strong> 
+    - (<tt>Object</tt>) <strong>content_type_id</strong> 
   
 
   
@@ -1271,28 +1202,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get the comment visibility as an integer.</p>
+<p>Public: Get the comment visibility as an integer.</p>
 
 <pre class="code ruby"><code>Currently only populated when created via ::create</code></pre>
+
+<p>Returns [Integer]</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1318,7 +1238,7 @@
       <div class="method_details ">
   <h3 class="signature " id="delete!-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>delete!</strong> 
+    - (<tt>Object</tt>) <strong>delete!</strong> 
   
 
   
@@ -1327,49 +1247,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Delete this comment</p>
+<p>Public: Delete this comment</p>
+
+<p>Returns [Boolean] true on success Raises [APIException] on failure</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true on success</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>on failure</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1414,83 +1300,18 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Flag a comment</p>
+<p>Public: Flag a comment</p>
+
+<p>reason - one of [disagree, spam, offensive, off-topic] notes  - String
+containing the reason for the flag email  - email address of the flagger
+user   - [User] If set, will include the user token for validation of the
+flag</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>reason</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>one of [disagree, spam, offensive, off-topic]</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>notes</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>String containing the reason for the flag</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>email</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>email address of the flagger</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>user</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span></tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>nil</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>If set, will include the user token for validation of the flag</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 
 </div><table class="source_code">
   <tr>
@@ -1544,7 +1365,7 @@
       <div class="method_details ">
   <h3 class="signature " id="like!-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>like!</strong>(user) 
+    - (<tt>Object</tt>) <strong>like!</strong>(user) 
   
 
   
@@ -1553,49 +1374,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Likes a comment as the passed user</p>
+<p>Public: Likes a comment as the passed user</p>
+
+<p>Returns [Boolean] true on success Raises [APIException] on failure</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true on success</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>on failure</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1631,7 +1418,7 @@
       <div class="method_details ">
   <h3 class="signature " id="source-instance_method">
   
-    - (<tt>Enum&lt;<span class='object_link'><a href="#SOURCES-constant" title="Livefyre::Comment::SOURCES (constant)">SOURCES</a></span>&gt;</tt>) <strong>source</strong> 
+    - (<tt>Object</tt>) <strong>source</strong> 
   
 
   
@@ -1640,28 +1427,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get the comment source as a string.</p>
+<p>Public: Get the comment source as a string.</p>
 
 <pre class="code ruby"><code>Currently only populated when created via ::create</code></pre>
+
+<p>Returns [Enum&lt;SOURCES&gt;]</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Enum&lt;<span class='object_link'><a href="#SOURCES-constant" title="Livefyre::Comment::SOURCES (constant)">SOURCES</a></span>&gt;</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1687,7 +1463,7 @@
       <div class="method_details ">
   <h3 class="signature " id="source_id-instance_method">
   
-    - (<tt>Integer</tt>) <strong>source_id</strong> 
+    - (<tt>Object</tt>) <strong>source_id</strong> 
   
 
   
@@ -1696,28 +1472,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get the comment source as an integer.</p>
+<p>Public: Get the comment source as an integer.</p>
 
 <pre class="code ruby"><code>Currently only populated when created via ::create</code></pre>
+
+<p>Returns [Integer]</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1743,7 +1508,7 @@
       <div class="method_details ">
   <h3 class="signature " id="to_s-instance_method">
   
-    - (<tt>String</tt>) <strong>to_s</strong> 
+    - (<tt>Object</tt>) <strong>to_s</strong> 
   
 
   
@@ -1751,36 +1516,16 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p class="note private">
-  <strong>This method is part of a private API.</strong>
-  You should avoid using this method if possible, as it may be removed or be changed in the future.
-</p>
+    
+<p>Internal: Returns a cleaner string representation of this object</p>
 
-<p>Returns a cleaner string representation of this object</p>
+<p>Returns [String] representation of this class</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>representation of this class</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1806,7 +1551,7 @@
       <div class="method_details ">
   <h3 class="signature " id="unlike!-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>unlike!</strong>(user) 
+    - (<tt>Object</tt>) <strong>unlike!</strong>(user) 
   
 
   
@@ -1815,49 +1560,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Unlikes a comment as the passed user</p>
+<p>Public: Unlikes a comment as the passed user</p>
+
+<p>Returns [Boolean] true on success Raises [APIException] on failure</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true on success</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>on failure</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1893,7 +1604,7 @@
       <div class="method_details ">
   <h3 class="signature " id="update-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>update</strong>(body) 
+    - (<tt>Object</tt>) <strong>update</strong>(body) 
   
 
   
@@ -1902,49 +1613,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Update this comment's content</p>
+<p>Public: Update this comment's content</p>
+
+<p>Returns [Boolean] true on success Raises [APIException] on failure</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true on success</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>on failure</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1980,7 +1657,7 @@
       <div class="method_details ">
   <h3 class="signature " id="visibility-instance_method">
   
-    - (<tt>Enum&lt;<span class='object_link'><a href="#VISIBILITIES-constant" title="Livefyre::Comment::VISIBILITIES (constant)">VISIBILITIES</a></span>&gt;</tt>) <strong>visibility</strong> 
+    - (<tt>Object</tt>) <strong>visibility</strong> 
   
 
   
@@ -1989,28 +1666,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get the comment visibility as a string.</p>
+<p>Public: Get the comment visibility as a string.</p>
 
 <pre class="code ruby"><code>Currently only populated when created via ::create</code></pre>
+
+<p>Returns [Enum&lt;VISIBILITIES&gt;]</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Enum&lt;<span class='object_link'><a href="#VISIBILITIES-constant" title="Livefyre::Comment::VISIBILITIES (constant)">VISIBILITIES</a></span>&gt;</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -2036,7 +1702,7 @@
       <div class="method_details ">
   <h3 class="signature " id="visibility_id-instance_method">
   
-    - (<tt>Integer</tt>) <strong>visibility_id</strong> 
+    - (<tt>Object</tt>) <strong>visibility_id</strong> 
   
 
   
@@ -2045,28 +1711,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get the comment visibility as an integer.</p>
+<p>Public: Get the comment visibility as an integer.</p>
 
 <pre class="code ruby"><code>Currently only populated when created via ::create</code></pre>
+
+<p>Returns [Integer]</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -2094,9 +1749,9 @@
 </div>
 
     <div id="footer">
-  Generated on Sun Sep 16 01:27:51 2012 by
+  Generated on Thu Sep 20 15:21:49 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.2.1 (ruby-1.9.3).
+  0.8.1 (ruby-1.9.3).
 </div>
 
   </body>

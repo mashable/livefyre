@@ -6,7 +6,7 @@
 <title>
   Class: Livefyre::Activity
   
-    &mdash; Documentation by YARD 0.8.2.1
+    &mdash; Documentation by YARD 0.8.1
   
 </title>
 
@@ -102,7 +102,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Proxy object for an item from a Conversation activity feed</p>
+<p>Public: Proxy object for an item from a Conversation activity feed</p>
 
 
   </div>
@@ -137,7 +137,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute body.</p>
+</div></span>
   
 </li>
 
@@ -162,7 +164,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute conversation.</p>
+</div></span>
   
 </li>
 
@@ -187,7 +191,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute created_at.</p>
+</div></span>
   
 </li>
 
@@ -212,7 +218,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute id.</p>
+</div></span>
   
 </li>
 
@@ -237,7 +245,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute state.</p>
+</div></span>
   
 </li>
 
@@ -245,7 +255,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#user-instance_method" title="#user (instance method)">- (User) <strong>user</strong> </a>
+      <a href="#user-instance_method" title="#user (instance method)">- (Object) <strong>user</strong> </a>
     
 
     
@@ -263,7 +273,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Fetch the user that created this record.</p>
+<p>Public: Fetch the user that created this record.</p>
 </div></span>
   
 </li>
@@ -300,7 +310,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Cast this activity to a Comment.</p>
+<p>Public: Cast this activity to a Comment.</p>
 </div></span>
   
 </li>
@@ -320,11 +330,11 @@
   
   
   
-  <span class="private note title">private</span>
+  
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Test if this activity represented a comment.</p>
+<p>Internal: Test if this activity represented a comment.</p>
 </div></span>
   
 </li>
@@ -418,6 +428,7 @@
     
       
       <span id="body=-instance_method"></span>
+      <span id="body-instance_method"></span>
       <div class="method_details first">
   <h3 class="signature first" id="body-instance_method">
   
@@ -430,6 +441,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute body</p>
+
 
   </div>
 </div>
@@ -459,6 +472,7 @@
     
       
       <span id="conversation=-instance_method"></span>
+      <span id="conversation-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="conversation-instance_method">
   
@@ -471,6 +485,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute conversation</p>
+
 
   </div>
 </div>
@@ -500,6 +516,7 @@
     
       
       <span id="created_at=-instance_method"></span>
+      <span id="created_at-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="created_at-instance_method">
   
@@ -512,6 +529,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute created_at</p>
+
 
   </div>
 </div>
@@ -541,6 +560,7 @@
     
       
       <span id="id=-instance_method"></span>
+      <span id="id-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="id-instance_method">
   
@@ -553,6 +573,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute id</p>
+
 
   </div>
 </div>
@@ -582,6 +604,7 @@
     
       
       <span id="state=-instance_method"></span>
+      <span id="state-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="state-instance_method">
   
@@ -594,6 +617,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute state</p>
+
 
   </div>
 </div>
@@ -623,10 +648,11 @@
     
       
       <span id="user=-instance_method"></span>
+      <span id="user-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="user-instance_method">
   
-    - (<tt><span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span></tt>) <strong>user</strong> 
+    - (<tt>Object</tt>) <strong>user</strong> 
   
 
   
@@ -635,26 +661,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Fetch the user that created this record</p>
+<p>Public: Fetch the user that created this record</p>
+
+<p>Returns [User]</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -696,7 +711,9 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Cast this activity to a Comment</p>
+<p>Public: Cast this activity to a Comment</p>
+
+<p>Return [Comment]</p>
 
 
   </div>
@@ -748,12 +765,10 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p class="note private">
-  <strong>This method is part of a private API.</strong>
-  You should avoid using this method if possible, as it may be removed or be changed in the future.
-</p>
+    
+<p>Internal: Test if this activity represented a comment</p>
 
-<p>Test if this activity represented a comment</p>
+<p>Returns [Boolean]</p>
 
 
   </div>
@@ -800,9 +815,9 @@
 </div>
 
     <div id="footer">
-  Generated on Sun Sep 16 01:27:51 2012 by
+  Generated on Thu Sep 20 15:21:49 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.2.1 (ruby-1.9.3).
+  0.8.1 (ruby-1.9.3).
 </div>
 
   </body>

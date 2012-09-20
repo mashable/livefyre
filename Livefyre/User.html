@@ -6,7 +6,7 @@
 <title>
   Class: Livefyre::User
   
-    &mdash; Documentation by YARD 0.8.2.1
+    &mdash; Documentation by YARD 0.8.1
   
 </title>
 
@@ -102,7 +102,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Interface for dealing with Livefyre users by User ID.</p>
+<p>Public: Interface for dealing with Livefyre users by User ID.</p>
 
 
   </div>
@@ -137,7 +137,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute display_name.</p>
+</div></span>
   
 </li>
 
@@ -162,7 +164,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute id.</p>
+</div></span>
   
 </li>
 
@@ -183,7 +187,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_user-class_method" title="get_user (class method)">+ (User) <strong>get_user</strong>(userish, client) </a>
+      <a href="#get_user-class_method" title="get_user (class method)">+ (Object) <strong>get_user</strong>(userish, client) </a>
     
 
     
@@ -198,7 +202,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Fetch a Livefyre::User from a user record or ID.</p>
+<p>Public: Fetch a Livefyre::User from a user record or ID.</p>
 </div></span>
   
 </li>
@@ -207,7 +211,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_user_id-class_method" title="get_user_id (class method)">+ (String) <strong>get_user_id</strong>(userish) </a>
+      <a href="#get_user_id-class_method" title="get_user_id (class method)">+ (Object) <strong>get_user_id</strong>(userish) </a>
     
 
     
@@ -222,7 +226,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Coerce a string or [User] into a user ID.</p>
+<p>Public: Coerce a string or [User] into a user ID.</p>
 </div></span>
   
 </li>
@@ -255,7 +259,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Setter for the client to associate with this user.</p>
+<p>Public: Setter for the client to associate with this user.</p>
 </div></span>
   
 </li>
@@ -279,7 +283,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Follow the given conversation.</p>
+<p>Public: Follow the given conversation.</p>
 </div></span>
   
 </li>
@@ -305,7 +309,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a new Livefyre User proxy.</p>
+<p>Public: Create a new Livefyre User proxy.</p>
 </div></span>
   
 </li>
@@ -314,7 +318,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#jid-instance_method" title="#jid (instance method)">- (String) <strong>jid</strong> </a>
+      <a href="#jid-instance_method" title="#jid (instance method)">- (Object) <strong>jid</strong> </a>
     
 
     
@@ -338,7 +342,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#profile-instance_method" title="#profile (instance method)">- (Hash) <strong>profile</strong> </a>
+      <a href="#profile-instance_method" title="#profile (instance method)">- (Object) <strong>profile</strong> </a>
     
 
     
@@ -353,7 +357,8 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Retrieve user information and recent comments for this user from Livefyre.</p>
+<p>Public: Retrieve user information and recent comments for this user from
+Livefyre.</p>
 </div></span>
   
 </li>
@@ -362,7 +367,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#push-instance_method" title="#push (instance method)">- (Bool) <strong>push</strong>(data) </a>
+      <a href="#push-instance_method" title="#push (instance method)">- (Object) <strong>push</strong>(data) </a>
     
 
     
@@ -377,7 +382,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Update this user's profile on Livefyre.</p>
+<p>Public: Update this user's profile on Livefyre.</p>
 </div></span>
   
 </li>
@@ -386,7 +391,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#refresh-instance_method" title="#refresh (instance method)">- (Bool) <strong>refresh</strong> </a>
+      <a href="#refresh-instance_method" title="#refresh (instance method)">- (Object) <strong>refresh</strong> </a>
     
 
     
@@ -401,7 +406,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Invoke Livefyre ping-to-pull to refresh this user's data.</p>
+<p>Public: Invoke Livefyre ping-to-pull to refresh this user's data.</p>
 </div></span>
   
 </li>
@@ -410,7 +415,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (Object) <strong>to_s</strong> </a>
     
 
     
@@ -421,11 +426,11 @@
   
   
   
-  <span class="private note title">private</span>
+  
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns a cleaner string representation of this object.</p>
+<p>Internal: Returns a cleaner string representation of this object.</p>
 </div></span>
   
 </li>
@@ -434,7 +439,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#token-instance_method" title="#token (instance method)">- (String) <strong>token</strong>(max_age = 86400) </a>
+      <a href="#token-instance_method" title="#token (instance method)">- (Object) <strong>token</strong>(max_age = 86400) </a>
     
 
     
@@ -449,7 +454,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Creates a signed JWT token for this user.</p>
+<p>Public: Creates a signed JWT token for this user.</p>
 </div></span>
   
 </li>
@@ -473,7 +478,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Unfollow the given conversation.</p>
+<p>Public: Unfollow the given conversation.</p>
 </div></span>
   
 </li>
@@ -497,69 +502,18 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a new Livefyre User proxy.</p>
+<p>Public: Create a new Livefyre User proxy.</p>
+
+<p>id           - [String] ID of the user to proxy client       -
+[Livefyre::Client] an instance of Livefyre::Client. If nil, the default
+client is used. display_name - [String] The display name for this user
+(optional)</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>ID of the user to proxy</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>client</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Client.html" title="Livefyre::Client (class)">Livefyre::Client</a></span></tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>nil</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>an instance of Livefyre::Client. If nil, the default client is used.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>display_name</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>nil</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The display name for this user (optional)</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 
 </div><table class="source_code">
   <tr>
@@ -595,6 +549,7 @@
     
       
       <span id="display_name=-instance_method"></span>
+      <span id="display_name-instance_method"></span>
       <div class="method_details first">
   <h3 class="signature first" id="display_name-instance_method">
   
@@ -607,6 +562,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute display_name</p>
+
 
   </div>
 </div>
@@ -636,6 +593,7 @@
     
       
       <span id="id=-instance_method"></span>
+      <span id="id-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="id-instance_method">
   
@@ -648,6 +606,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute id</p>
+
 
   </div>
 </div>
@@ -685,7 +645,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="get_user-class_method">
   
-    + (<tt><span class='object_link'><a href="" title="Livefyre::User (class)">User</a></span></tt>) <strong>get_user</strong>(userish, client) 
+    + (<tt>Object</tt>) <strong>get_user</strong>(userish, client) 
   
 
   
@@ -694,62 +654,18 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Fetch a Livefyre::User from a user record or ID</p>
+<p>Public: Fetch a Livefyre::User from a user record or ID</p>
+
+<p>userish - [String/User/Int] A User or user ID client  - [Livefyre::Client]
+Client to bind to the User record</p>
+
+<p>Returns [User]</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>userish</span>
-      
-      
-        <span class='type'>(<tt>String/<span class='object_link'><a href="" title="Livefyre::User (class)">User</a></span>/Int</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>A User or user ID</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>client</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Client.html" title="Livefyre::Client (class)">Livefyre::Client</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Client to bind to the User record</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Livefyre::User (class)">User</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -787,7 +703,7 @@
       <div class="method_details ">
   <h3 class="signature " id="get_user_id-class_method">
   
-    + (<tt>String</tt>) <strong>get_user_id</strong>(userish) 
+    + (<tt>Object</tt>) <strong>get_user_id</strong>(userish) 
   
 
   
@@ -796,69 +712,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Coerce a string or [User] into a user ID</p>
+<p>Public: Coerce a string or [User] into a user ID</p>
+
+<p>userish - [String/User/Int]A [User] or user ID</p>
+
+<p>Returns [String] User ID Raises Exception when value can't be coerced</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>userish</span>
-      
-      
-        <span class='type'>(<tt>String/<span class='object_link'><a href="" title="Livefyre::User (class)">User</a></span>/Int</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>A [User] or user ID</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>User ID</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        
-        <div class='inline'>
-<p>Exception when value can't be coerced</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -917,7 +781,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Setter for the client to associate with this user</p>
+<p>Public: Setter for the client to associate with this user</p>
 
 
   </div>
@@ -958,33 +822,16 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Follow the given conversation</p>
+<p>Public: Follow the given conversation</p>
+
+<p>conversation - [Conversation] to follow Returns [Boolean] true on success
+Raises [APIException] on failure</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>conversation</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Conversation.html" title="Livefyre::Conversation (class)">Conversation</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>to follow</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 
 </div><table class="source_code">
   <tr>
@@ -1010,7 +857,7 @@
       <div class="method_details ">
   <h3 class="signature " id="jid-instance_method">
   
-    - (<tt>String</tt>) <strong>jid</strong> 
+    - (<tt>Object</tt>) <strong>jid</strong> 
   
 
   
@@ -1021,29 +868,13 @@
     
 <p>Internal - Fetch an internal Jabber-style ID for this user</p>
 
+<p>Returns [String] representation of this user</p>
+
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>representation of this user</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1069,7 +900,7 @@
       <div class="method_details ">
   <h3 class="signature " id="profile-instance_method">
   
-    - (<tt>Hash</tt>) <strong>profile</strong> 
+    - (<tt>Object</tt>) <strong>profile</strong> 
   
 
   
@@ -1078,63 +909,18 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Retrieve user information and recent comments for this user from Livefyre</p>
+<p>Public: Retrieve user information and recent comments for this user from
+Livefyre</p>
+
+<p>Returns [Hash] of profile data Raises [JSON::ParserError] if the returned
+data cannot be parsed Raises [APIException] if the API does not return a
+valid response</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>of profile data</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>JSON::ParserError</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>if the returned data cannot be parsed</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>if the API does not return a valid response</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1178,7 +964,7 @@
       <div class="method_details ">
   <h3 class="signature " id="push-instance_method">
   
-    - (<tt>Bool</tt>) <strong>push</strong>(data) 
+    - (<tt>Object</tt>) <strong>push</strong>(data) 
   
 
   
@@ -1187,69 +973,18 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Update this user's profile on Livefyre</p>
+<p>Public: Update this user's profile on Livefyre</p>
+
+<p>data - [Hash] A hash of user data as defined by the Livefyre user profile
+schema</p>
+
+<p>Returns [Bool] true on success Raises [APIException] if the request failed</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>data</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>A hash of user data as defined by the Livefyre user profile schema</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Bool</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true on success</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>if the request failed</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1285,7 +1020,7 @@
       <div class="method_details ">
   <h3 class="signature " id="refresh-instance_method">
   
-    - (<tt>Bool</tt>) <strong>refresh</strong> 
+    - (<tt>Object</tt>) <strong>refresh</strong> 
   
 
   
@@ -1294,49 +1029,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Invoke Livefyre ping-to-pull to refresh this user's data</p>
+<p>Public: Invoke Livefyre ping-to-pull to refresh this user's data</p>
+
+<p>Returns [Bool] true on success Raises [APIException] if the request failed</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Bool</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true on success</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>if the request failed</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1372,7 +1073,7 @@
       <div class="method_details ">
   <h3 class="signature " id="to_s-instance_method">
   
-    - (<tt>String</tt>) <strong>to_s</strong> 
+    - (<tt>Object</tt>) <strong>to_s</strong> 
   
 
   
@@ -1380,36 +1081,16 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p class="note private">
-  <strong>This method is part of a private API.</strong>
-  You should avoid using this method if possible, as it may be removed or be changed in the future.
-</p>
+    
+<p>Internal: Returns a cleaner string representation of this object</p>
 
-<p>Returns a cleaner string representation of this object</p>
+<p>Returns [String] representation of this class</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>representation of this class</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1435,7 +1116,7 @@
       <div class="method_details ">
   <h3 class="signature " id="token-instance_method">
   
-    - (<tt>String</tt>) <strong>token</strong>(max_age = 86400) 
+    - (<tt>Object</tt>) <strong>token</strong>(max_age = 86400) 
   
 
   
@@ -1444,53 +1125,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Creates a signed JWT token for this user</p>
+<p>Public: Creates a signed JWT token for this user</p>
+
+<p>max_age - [Integer] Expiry time for this token in seconds (default: 86400)</p>
+
+<p>Returns [String] token</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>max_age</span>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>86400</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Expiry time for this token in seconds (default: 86400)</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>token</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1539,33 +1184,16 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Unfollow the given conversation</p>
+<p>Public: Unfollow the given conversation</p>
+
+<p>conversation - [Conversation] to unfollow Returns [Boolean] true on success
+Raises [APIException] on failure</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>conversation</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Conversation.html" title="Livefyre::Conversation (class)">Conversation</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>to unfollow</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 
 </div><table class="source_code">
   <tr>
@@ -1593,9 +1221,9 @@
 </div>
 
     <div id="footer">
-  Generated on Sun Sep 16 01:27:50 2012 by
+  Generated on Thu Sep 20 15:21:49 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.2.1 (ruby-1.9.3).
+  0.8.1 (ruby-1.9.3).
 </div>
 
   </body>

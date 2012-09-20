@@ -6,7 +6,7 @@
 <title>
   Class: Livefyre::Client
   
-    &mdash; Documentation by YARD 0.8.2.1
+    &mdash; Documentation by YARD 0.8.1
   
 </title>
 
@@ -106,7 +106,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Primary interface to the Livefyre API</p>
+<p>Public: Primary interface to the Livefyre API</p>
 
 
   </div>
@@ -123,7 +123,7 @@
           <div class="docstring">
   <div class="discussion">
     
-<p>Valid roles for #set_user_role</p>
+<p>Public: Valid roles for #set_user_role</p>
 
 
   </div>
@@ -139,7 +139,7 @@
           <div class="docstring">
   <div class="discussion">
     
-<p>Valid scopes for #set_user_role</p>
+<p>Public: Valid scopes for #set_user_role</p>
 
 
   </div>
@@ -180,7 +180,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute bootstrap.</p>
+</div></span>
   
 </li>
 
@@ -205,7 +207,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute host.</p>
+</div></span>
   
 </li>
 
@@ -230,7 +234,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute http_client.</p>
+</div></span>
   
 </li>
 
@@ -255,7 +261,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute key.</p>
+</div></span>
   
 </li>
 
@@ -280,7 +288,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute options.</p>
+</div></span>
   
 </li>
 
@@ -305,7 +315,36 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute quill.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#search-instance_method" title="#search (instance method)">- (Object) <strong>search</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute search.</p>
+</div></span>
   
 </li>
 
@@ -330,7 +369,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute site_key.</p>
+</div></span>
   
 </li>
 
@@ -355,7 +396,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute stream.</p>
+</div></span>
   
 </li>
 
@@ -380,7 +423,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute system_token.</p>
+</div></span>
   
 </li>
 
@@ -412,11 +457,11 @@
   
   
   
-  <span class="private note title">private</span>
+  
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Identifier to use to uniquely identify this client.</p>
+<p>Internal: Identifier to use to uniquely identify this client.</p>
 </div></span>
   
 </li>
@@ -442,7 +487,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a new Livefyre client.</p>
+<p>Public: Create a new Livefyre client.</p>
 </div></span>
   
 </li>
@@ -451,7 +496,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#jid-instance_method" title="#jid (instance method)">- (String) <strong>jid</strong>(id) </a>
+      <a href="#jid-instance_method" title="#jid (instance method)">- (Object) <strong>jid</strong>(id) </a>
     
 
     
@@ -466,7 +511,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Transform the given ID into a jid.</p>
+<p>Public: Transform the given ID into a jid.</p>
 </div></span>
   
 </li>
@@ -475,7 +520,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_user_role-instance_method" title="#set_user_role (instance method)">- (Bool) <strong>set_user_role</strong>(user_id, role, scope = 'domain', scope_id = nil) </a>
+      <a href="#set_user_role-instance_method" title="#set_user_role (instance method)">- (Object) <strong>set_user_role</strong>(user_id, role, scope = 'domain', scope_id = nil) </a>
     
 
     
@@ -490,7 +535,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Sets a user's role (affiliation) in a given scope.</p>
+<p>Public: Sets a user's role (affiliation) in a given scope.</p>
 </div></span>
   
 </li>
@@ -499,7 +544,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#sign-instance_method" title="#sign (instance method)">- (String) <strong>sign</strong>(data) </a>
+      <a href="#sign-instance_method" title="#sign (instance method)">- (Object) <strong>sign</strong>(data) </a>
     
 
     
@@ -514,7 +559,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Sign a data structure with this client's network key.</p>
+<p>Public: Sign a data structure with this client's network key.</p>
 </div></span>
   
 </li>
@@ -523,31 +568,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  <span class="private note title">private</span>
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns a cleaner string representation of this object.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#user-instance_method" title="#user (instance method)">- (Livefyre::User) <strong>user</strong>(uid, display_name = nil) </a>
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (Object) <strong>to_s</strong> </a>
     
 
     
@@ -562,7 +583,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a <span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span> with this client's credentials.</p>
+<p>Internal: Returns a cleaner string representation of this object.</p>
 </div></span>
   
 </li>
@@ -571,7 +592,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#validate-instance_method" title="#validate (instance method)">- (Hash) <strong>validate</strong>(data) </a>
+      <a href="#user-instance_method" title="#user (instance method)">- (Object) <strong>user</strong>(uid, display_name = nil) </a>
     
 
     
@@ -586,7 +607,31 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Validates and decodes a JWT token.</p>
+<p>Public: Create a <span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span> with this client's credentials.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#validate-instance_method" title="#validate (instance method)">- (Object) <strong>validate</strong>(data) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Public: Validates and decodes a JWT token.</p>
 </div></span>
   
 </li>
@@ -611,83 +656,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a new Livefyre client.</p>
+<p>Public: Create a new Livefyre client.</p>
+
+<p>options - [Hash] array of options to pass to the client for initialization
+:host         - your Livefyre network_host :key          - your Livefyre
+network_key :system_token - your Livefyre long-lived system user key</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>options</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>{}</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>array of options to pass to the client for initialization</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>:host</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>your Livefyre network_host</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>:key</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>your Livefyre network_key</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>:system_token</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>your Livefyre long-lived system user key</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 
 </div><table class="source_code">
   <tr>
@@ -710,7 +689,8 @@
 33
 34
 35
-36</pre>
+36
+37</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 21</span>
@@ -722,6 +702,7 @@
   <span class='ivar'>@http_client</span> <span class='op'>=</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://</span><span class='embexpr_beg'>#{</span><span class='ivar'>@host</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='ivar'>@quill</span> <span class='op'>=</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://quill.</span><span class='embexpr_beg'>#{</span><span class='ivar'>@host</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='ivar'>@stream</span> <span class='op'>=</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://stream.</span><span class='embexpr_beg'>#{</span><span class='ivar'>@host</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='ivar'>@search</span> <span class='op'>=</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://search.</span><span class='embexpr_beg'>#{</span><span class='ivar'>@host</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='ivar'>@bootstrap</span> <span class='op'>=</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://bootstrap.</span><span class='embexpr_beg'>#{</span><span class='ivar'>@host</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='ivar'>@site_key</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:site_key</span><span class='rbracket'>]</span>
 
@@ -743,6 +724,7 @@
     
       
       <span id="bootstrap=-instance_method"></span>
+      <span id="bootstrap-instance_method"></span>
       <div class="method_details first">
   <h3 class="signature first" id="bootstrap-instance_method">
   
@@ -755,6 +737,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute bootstrap</p>
+
 
   </div>
 </div>
@@ -784,6 +768,7 @@
     
       
       <span id="host=-instance_method"></span>
+      <span id="host-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="host-instance_method">
   
@@ -796,6 +781,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute host</p>
+
 
   </div>
 </div>
@@ -825,6 +812,7 @@
     
       
       <span id="http_client=-instance_method"></span>
+      <span id="http_client-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="http_client-instance_method">
   
@@ -837,6 +825,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute http_client</p>
+
 
   </div>
 </div>
@@ -866,6 +856,7 @@
     
       
       <span id="key=-instance_method"></span>
+      <span id="key-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="key-instance_method">
   
@@ -878,6 +869,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute key</p>
+
 
   </div>
 </div>
@@ -907,6 +900,7 @@
     
       
       <span id="options=-instance_method"></span>
+      <span id="options-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="options-instance_method">
   
@@ -919,6 +913,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute options</p>
+
 
   </div>
 </div>
@@ -948,6 +944,7 @@
     
       
       <span id="quill=-instance_method"></span>
+      <span id="quill-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="quill-instance_method">
   
@@ -960,6 +957,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute quill</p>
+
 
   </div>
 </div>
@@ -988,7 +987,52 @@
 </div>
     
       
+      <span id="search=-instance_method"></span>
+      <span id="search-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="search-instance_method">
+  
+    - (<tt>Object</tt>) <strong>search</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute search</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 11</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_search'>search</span>
+  <span class='ivar'>@search</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
       <span id="site_key=-instance_method"></span>
+      <span id="site_key-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="site_key-instance_method">
   
@@ -1001,6 +1045,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute site_key</p>
+
 
   </div>
 </div>
@@ -1030,6 +1076,7 @@
     
       
       <span id="stream=-instance_method"></span>
+      <span id="stream-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="stream-instance_method">
   
@@ -1042,6 +1089,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute stream</p>
+
 
   </div>
 </div>
@@ -1071,6 +1120,7 @@
     
       
       <span id="system_token=-instance_method"></span>
+      <span id="system_token-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="system_token-instance_method">
   
@@ -1083,6 +1133,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute system_token</p>
+
 
   </div>
 </div>
@@ -1128,36 +1180,16 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p class="note private">
-  <strong>This method is part of a private API.</strong>
-  You should avoid using this method if possible, as it may be removed or be changed in the future.
-</p>
+    
+<p>Internal: Identifier to use to uniquely identify this client.</p>
 
-<p>Identifier to use to uniquely identify this client.</p>
+<p>Returns string ID</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        
-        <div class='inline'>
-<p>string ID</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1165,12 +1197,12 @@
       <pre class="lines">
 
 
-117
 118
-119</pre>
+119
+120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 117</span>
+      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 118</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_identifier'>identifier</span>
   <span class='ivar'>@identifier</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RubyLib-</span><span class='embexpr_beg'>#{</span><span class='const'>Process</span><span class='period'>.</span><span class='id identifier rubyid_pid'>pid</span><span class='rbrace'>}</span><span class='tstring_content'>-</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_local_ip'>local_ip</span><span class='rbrace'>}</span><span class='tstring_content'>-</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_object_id'>object_id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1183,7 +1215,7 @@
       <div class="method_details ">
   <h3 class="signature " id="jid-instance_method">
   
-    - (<tt>String</tt>) <strong>jid</strong>(id) 
+    - (<tt>Object</tt>) <strong>jid</strong>(id) 
   
 
   
@@ -1192,51 +1224,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Transform the given ID into a jid</p>
+<p>Public: Transform the given ID into a jid</p>
+
+<p>id - a string value to compose the JID with</p>
+
+<p>Returns [String] JID</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>id</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>a string value to compose the JID with</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>JID</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1244,12 +1242,12 @@
       <pre class="lines">
 
 
-110
 111
-112</pre>
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 110</span>
+      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 111</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_jid'>jid</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s@%s</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_host'>host</span><span class='rbracket'>]</span>
@@ -1262,7 +1260,7 @@
       <div class="method_details ">
   <h3 class="signature " id="set_user_role-instance_method">
   
-    - (<tt>Bool</tt>) <strong>set_user_role</strong>(user_id, role, scope = 'domain', scope_id = nil) 
+    - (<tt>Object</tt>) <strong>set_user_role</strong>(user_id, role, scope = 'domain', scope_id = nil) 
   
 
   
@@ -1271,132 +1269,26 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Sets a user's role (affiliation) in a given scope.</p>
+<p>Public: Sets a user's role (affiliation) in a given scope.</p>
+
+<p>user_id   - The user ID (without the host) to set roles for role      - The
+<span class='object_link'><a href="#ROLES-constant" title="Livefyre::Client::ROLES (constant)">role</a></span> to set. scope     - The <span class='object_link'><a href="#SCOPES-constant" title="Livefyre::Client::SCOPES (constant)">scope</a></span> for which to set this
+role. scope_id  - In the case that the given scope requires identification,
+specifies which scope to operate on.</p>
+
+<p>Examples</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_set_user_role'>set_user_role</span><span class='lparen'>(</span><span class='int'>1234</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>owner</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>domain</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_set_user_role'>set_user_role</span><span class='lparen'>(</span><span class='int'>1234</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>moderator</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>site</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_site_id'>site_id</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_set_user_role'>set_user_role</span><span class='lparen'>(</span><span class='int'>1234</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>moderator</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>conv</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_conversation_id'>conversation_id</span><span class='rparen'>)</span></code></pre>
+
+<p>Returns [Bool] true on success Raises APIException if the request failed</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-  <div class="examples">
-    <p class="tag_title">Examples:</p>
-    
-      
-      <pre class="example code"><span class='id identifier rubyid_set_user_role'>set_user_role</span><span class='lparen'>(</span><span class='int'>1234</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>owner</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>domain</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_set_user_role'>set_user_role</span><span class='lparen'>(</span><span class='int'>1234</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>moderator</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>site</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_site_id'>site_id</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_set_user_role'>set_user_role</span><span class='lparen'>(</span><span class='int'>1234</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>moderator</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>conv</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_conversation_id'>conversation_id</span><span class='rparen'>)</span></pre>
-    
-  </div>
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>user_id</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The user ID (without the host) to set roles for</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>role</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The <span class='object_link'><a href="#ROLES-constant" title="Livefyre::Client::ROLES (constant)">role</a></span> to set.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>scope</span>
-      
-      
-        <span class='type'></span>
-      
-      
-        <em class="default">(defaults to: <tt>'domain'</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The <span class='object_link'><a href="#SCOPES-constant" title="Livefyre::Client::SCOPES (constant)">scope</a></span> for which to set this role.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>scope_id</span>
-      
-      
-        <span class='type'></span>
-      
-      
-        <em class="default">(defaults to: <tt>nil</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>In the case that the given scope requires identification, specifies which
-scope to operate on.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Bool</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true on success</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        
-        <div class='inline'>
-<p>APIException if the request failed</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1404,7 +1296,6 @@ scope to operate on.</p>
       <pre class="lines">
 
 
-79
 80
 81
 82
@@ -1428,10 +1319,11 @@ scope to operate on.</p>
 100
 101
 102
-103</pre>
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_user_role'>set_user_role</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_role'>role</span><span class='comma'>,</span> <span class='id identifier rubyid_scope'>scope</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>domain</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_scope_id'>scope_id</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid scope</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='const'>SCOPES</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_scope'>scope</span>
@@ -1466,7 +1358,7 @@ scope to operate on.</p>
       <div class="method_details ">
   <h3 class="signature " id="sign-instance_method">
   
-    - (<tt>String</tt>) <strong>sign</strong>(data) 
+    - (<tt>Object</tt>) <strong>sign</strong>(data) 
   
 
   
@@ -1475,31 +1367,15 @@ scope to operate on.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Sign a data structure with this client's network key.</p>
+<p>Public: Sign a data structure with this client's network key.</p>
+
+<p>Returns [String] A signed JWT token</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>A signed JWT token</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1507,12 +1383,12 @@ scope to operate on.</p>
       <pre class="lines">
 
 
-41
 42
-43</pre>
+43
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sign'>sign</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='const'>JWT</span><span class='period'>.</span><span class='id identifier rubyid_encode'>encode</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='ivar'>@key</span><span class='rparen'>)</span>
@@ -1525,7 +1401,7 @@ scope to operate on.</p>
       <div class="method_details ">
   <h3 class="signature " id="to_s-instance_method">
   
-    - (<tt>String</tt>) <strong>to_s</strong> 
+    - (<tt>Object</tt>) <strong>to_s</strong> 
   
 
   
@@ -1533,36 +1409,16 @@ scope to operate on.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p class="note private">
-  <strong>This method is part of a private API.</strong>
-  You should avoid using this method if possible, as it may be removed or be changed in the future.
-</p>
+    
+<p>Internal: Returns a cleaner string representation of this object</p>
 
-<p>Returns a cleaner string representation of this object</p>
+<p>Returns [String] representation of this class</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>representation of this class</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1570,12 +1426,12 @@ scope to operate on.</p>
       <pre class="lines">
 
 
-124
 125
-126</pre>
+126
+127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#&lt;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'>:0x</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_object_id'>object_id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='int'>14</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'> host='</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host'>host</span><span class='rbrace'>}</span><span class='tstring_content'>' key='</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='rbrace'>}</span><span class='tstring_content'>'&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -1588,7 +1444,7 @@ scope to operate on.</p>
       <div class="method_details ">
   <h3 class="signature " id="user-instance_method">
   
-    - (<tt><span class='object_link'><a href="User.html" title="Livefyre::User (class)">Livefyre::User</a></span></tt>) <strong>user</strong>(uid, display_name = nil) 
+    - (<tt>Object</tt>) <strong>user</strong>(uid, display_name = nil) 
   
 
   
@@ -1597,65 +1453,19 @@ scope to operate on.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a <span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span> with this client's credentials.</p>
+<p>Public: Create a <span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span> with this client's credentials.</p>
+
+<p>uid          - the user ID to create a Livefyre user for. This should be
+the ID used to reference this user in Livefyre's system. display_name - the
+displayed name for this user. Optional.</p>
+
+<p>Returns [Livefyre::User]</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>uid</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the user ID to create a Livefyre user for. This should be the ID used to
-reference this user in Livefyre's system.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>display_name</span>
-      
-      
-        <span class='type'></span>
-      
-      
-        <em class="default">(defaults to: <tt>nil</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the displayed name for this user. Optional.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Livefyre::User (class)">Livefyre::User</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1663,12 +1473,12 @@ reference this user in Livefyre's system.</p>
       <pre class="lines">
 
 
-59
 60
-61</pre>
+61
+62</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_user'>user</span><span class='lparen'>(</span><span class='id identifier rubyid_uid'>uid</span><span class='comma'>,</span> <span class='id identifier rubyid_display_name'>display_name</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_uid'>uid</span><span class='comma'>,</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_display_name'>display_name</span><span class='rparen'>)</span>
@@ -1681,7 +1491,7 @@ reference this user in Livefyre's system.</p>
       <div class="method_details ">
   <h3 class="signature " id="validate-instance_method">
   
-    - (<tt>Hash</tt>) <strong>validate</strong>(data) 
+    - (<tt>Object</tt>) <strong>validate</strong>(data) 
   
 
   
@@ -1690,49 +1500,16 @@ reference this user in Livefyre's system.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Validates and decodes a JWT token</p>
+<p>Public: Validates and decodes a JWT token</p>
+
+<p>Returns [Hash] A hash of data passed from the token Raises
+[JWT::DecodeError] if invalid token contents or signature</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>A hash of data passed from the token</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>JWT::DecodeError</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>if invalid token contents or signature</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1740,12 +1517,12 @@ reference this user in Livefyre's system.</p>
       <pre class="lines">
 
 
-49
 50
-51</pre>
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/livefyre/client.rb', line 50</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate'>validate</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='const'>JWT</span><span class='period'>.</span><span class='id identifier rubyid_decode'>decode</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='ivar'>@key</span><span class='rparen'>)</span>
@@ -1760,9 +1537,9 @@ reference this user in Livefyre's system.</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Sep 16 01:27:51 2012 by
+  Generated on Thu Sep 20 15:21:49 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.2.1 (ruby-1.9.3).
+  0.8.1 (ruby-1.9.3).
 </div>
 
   </body>

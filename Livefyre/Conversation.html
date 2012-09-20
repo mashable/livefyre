@@ -6,7 +6,7 @@
 <title>
   Class: Livefyre::Conversation
   
-    &mdash; Documentation by YARD 0.8.2.1
+    &mdash; Documentation by YARD 0.8.1
   
 </title>
 
@@ -102,7 +102,8 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Proxy object for a Livefyre [Conversation] (also called a Collection)</p>
+<p>Public: Proxy object for a Livefyre [Conversation] (also called a
+Collection)</p>
 
 
   </div>
@@ -137,7 +138,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute article_id.</p>
+</div></span>
   
 </li>
 
@@ -162,7 +165,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute id.</p>
+</div></span>
   
 </li>
 
@@ -183,7 +188,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#collectionMeta-class_method" title="collectionMeta (class method)">+ (String) <strong>collectionMeta</strong>(client, article_id, title, link, tags) </a>
+      <a href="#collectionMeta-class_method" title="collectionMeta (class method)">+ (Object) <strong>collectionMeta</strong>(client, article_id, title, link, tags) </a>
     
 
     
@@ -194,11 +199,11 @@
   
   
   
-  <span class="private note title">private</span>
+  
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Generate a signed collectionMeta.</p>
+<p>Internal: Generate a signed collectionMeta.</p>
 </div></span>
   
 </li>
@@ -207,7 +212,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create-class_method" title="create (class method)">+ (Conversation) <strong>create</strong>(client, article_id, title, link, tags = nil) </a>
+      <a href="#create-class_method" title="create (class method)">+ (Object) <strong>create</strong>(client, article_id, title, link, tags = nil) </a>
     
 
     
@@ -222,7 +227,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a new collection.</p>
+<p>Public: Create a new collection.</p>
 </div></span>
   
 </li>
@@ -255,7 +260,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Fetch a list of comments from a conversation TODO: Not currently working.</p>
+<p>Public: Fetch a list of comments from a conversation.</p>
 </div></span>
   
 </li>
@@ -264,7 +269,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create_comment-instance_method" title="#create_comment (instance method)">- (Comment) <strong>create_comment</strong>(user, body) </a>
+      <a href="#create_comment-instance_method" title="#create_comment (instance method)">- (Object) <strong>create_comment</strong>(user, body) </a>
     
 
     
@@ -279,7 +284,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a comment on this conversation.</p>
+<p>Public: Create a comment on this conversation.</p>
 </div></span>
   
 </li>
@@ -288,7 +293,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#follow_as-instance_method" title="#follow_as (instance method)">- (Boolean) <strong>follow_as</strong>(user) </a>
+      <a href="#follow_as-instance_method" title="#follow_as (instance method)">- (Object) <strong>follow_as</strong>(user) </a>
     
 
     
@@ -303,7 +308,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Follow this conversation as the passed user.</p>
+<p>Public: Follow this conversation as the passed user.</p>
 </div></span>
   
 </li>
@@ -338,7 +343,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#unfollow_as-instance_method" title="#unfollow_as (instance method)">- (Boolean) <strong>unfollow_as</strong>(user) </a>
+      <a href="#unfollow_as-instance_method" title="#unfollow_as (instance method)">- (Object) <strong>unfollow_as</strong>(user) </a>
     
 
     
@@ -353,7 +358,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Unfollow this conversation as the passed user.</p>
+<p>Public: Unfollow this conversation as the passed user.</p>
 </div></span>
   
 </li>
@@ -362,7 +367,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#update-instance_method" title="#update (instance method)">- (Bool) <strong>update</strong>(title, link, tags = nil) </a>
+      <a href="#update-instance_method" title="#update (instance method)">- (Object) <strong>update</strong>(title, link, tags = nil) </a>
     
 
     
@@ -377,7 +382,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Update this collection with new metadata.</p>
+<p>Public: Update this collection with new metadata.</p>
 </div></span>
   
 </li>
@@ -441,6 +446,7 @@
     
       
       <span id="article_id=-instance_method"></span>
+      <span id="article_id-instance_method"></span>
       <div class="method_details first">
   <h3 class="signature first" id="article_id-instance_method">
   
@@ -453,6 +459,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute article_id</p>
+
 
   </div>
 </div>
@@ -482,6 +490,7 @@
     
       
       <span id="id=-instance_method"></span>
+      <span id="id-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="id-instance_method">
   
@@ -494,6 +503,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Returns the value of attribute id</p>
+
 
   </div>
 </div>
@@ -531,7 +542,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="collectionMeta-class_method">
   
-    + (<tt>String</tt>) <strong>collectionMeta</strong>(client, article_id, title, link, tags) 
+    + (<tt>Object</tt>) <strong>collectionMeta</strong>(client, article_id, title, link, tags) 
   
 
   
@@ -539,104 +550,20 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p class="note private">
-  <strong>This method is part of a private API.</strong>
-  You should avoid using this method if possible, as it may be removed or be changed in the future.
-</p>
+    
+<p>Internal: Generate a signed collectionMeta</p>
 
-<p>Generate a signed collectionMeta</p>
+<p>client     - [Client] identifying the site to create the collection on
+title      - [String] Article title link       - [String] Article link tags
+- [String, Array] Article tags</p>
+
+<p>Returns [String] signed token</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>client</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Client.html" title="Livefyre::Client (class)">Client</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>identifying the site to create the collection on</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>title</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Article title</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>link</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Article link</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>tags</span>
-      
-      
-        <span class='type'>(<tt>String</tt>, <tt>Array</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Article tags</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>signed token</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -710,7 +637,7 @@
       <div class="method_details ">
   <h3 class="signature " id="create-class_method">
   
-    + (<tt><span class='object_link'><a href="" title="Livefyre::Conversation (class)">Conversation</a></span></tt>) <strong>create</strong>(client, article_id, title, link, tags = nil) 
+    + (<tt>Object</tt>) <strong>create</strong>(client, article_id, title, link, tags = nil) 
   
 
   
@@ -719,112 +646,20 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a new collection</p>
+<p>Public: Create a new collection</p>
+
+<p>client     - [Client] identifying the site to create the collection on
+article_id - [String] ID to use to identify this article title      -
+[String] Article title link       - [String] Article link tags       -
+[String, Array] Article tags</p>
+
+<p>Returns [Conversation]</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>client</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Client.html" title="Livefyre::Client (class)">Client</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>identifying the site to create the collection on</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>article_id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>ID to use to identify this article</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>title</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Article title</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>link</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Article link</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>tags</span>
-      
-      
-        <span class='type'>(<tt>String</tt>, <tt>Array</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>nil</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Article tags</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Livefyre::Conversation (class)">Conversation</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -881,7 +716,9 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Fetch a list of comments from a conversation TODO: Not currently working.</p>
+<p>Public: Fetch a list of comments from a conversation</p>
+
+<pre class="code ruby"><code>TODO: Not currently working.</code></pre>
 
 
   </div>
@@ -923,7 +760,7 @@
       <div class="method_details ">
   <h3 class="signature " id="create_comment-instance_method">
   
-    - (<tt><span class='object_link'><a href="Comment.html" title="Livefyre::Comment (class)">Comment</a></span></tt>) <strong>create_comment</strong>(user, body) 
+    - (<tt>Object</tt>) <strong>create_comment</strong>(user, body) 
   
 
   
@@ -932,62 +769,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a comment on this conversation</p>
+<p>Public: Create a comment on this conversation</p>
+
+<p>user - [User] to create the comment as body - [String] body of the content</p>
+
+<p>Returns [Comment]</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>user</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>to create the comment as</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>body</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>body of the content</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Comment.html" title="Livefyre::Comment (class)">Comment</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1013,7 +805,7 @@
       <div class="method_details ">
   <h3 class="signature " id="follow_as-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>follow_as</strong>(user) 
+    - (<tt>Object</tt>) <strong>follow_as</strong>(user) 
   
 
   
@@ -1022,69 +814,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Follow this conversation as the passed user</p>
+<p>Public: Follow this conversation as the passed user</p>
+
+<p>user - [User] to follow the conversation as</p>
+
+<p>Returns [Boolean] true on success Raises [APIException] on failure</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>user</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>to follow the conversation as</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true on success</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>on failure</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1120,7 +860,7 @@
       <div class="method_details ">
   <h3 class="signature " id="unfollow_as-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>unfollow_as</strong>(user) 
+    - (<tt>Object</tt>) <strong>unfollow_as</strong>(user) 
   
 
   
@@ -1129,69 +869,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Unfollow this conversation as the passed user</p>
+<p>Public: Unfollow this conversation as the passed user</p>
+
+<p>user - [User] to unfollow the conversation as</p>
+
+<p>Returns [Boolean] true on success Raises [APIException] on failure</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>user</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Livefyre::User (class)">User</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>to unfollow the conversation as</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true on success</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>on failure</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1227,7 +915,7 @@
       <div class="method_details ">
   <h3 class="signature " id="update-instance_method">
   
-    - (<tt>Bool</tt>) <strong>update</strong>(title, link, tags = nil) 
+    - (<tt>Object</tt>) <strong>update</strong>(title, link, tags = nil) 
   
 
   
@@ -1236,49 +924,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Update this collection with new metadata</p>
+<p>Public: Update this collection with new metadata</p>
+
+<p>Returns [Bool] true on success Raises [APIException] on failure</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Bool</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true on success</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>on failure</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1318,9 +972,9 @@
 </div>
 
     <div id="footer">
-  Generated on Sun Sep 16 01:27:51 2012 by
+  Generated on Thu Sep 20 15:21:49 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.2.1 (ruby-1.9.3).
+  0.8.1 (ruby-1.9.3).
 </div>
 
   </body>
