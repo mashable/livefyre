@@ -205,18 +205,33 @@ module Livefyre
 
     # Public: Validate a signature as passed by the Livefyre postback service
     #
+    # params      - Hash of request parameters
+    # secret      - Site key to validate signature with
+    # time_window - Enforce that the sig_created is within time_window seconds of the current time.
+    #               Slush is given to account for system time drift. Pass nil or false to disable timestamp checking.
+    #
     # Returns [Bool]
     # Raises [InvalidSignatureException] on failure
-    def self.validate_signature(sig, created_at, secret)
+    def self.validate_signature(params, secret, time_window = 300)
+      params = params.clone
+      params.delete :controller
+      params.delete :action
+      sig = (params.delete(:sig) || "").strip
       raise InvalidSignatureException.new "Missing sig" if sig.nil?
-      raise InvalidSignatureException.new "Missing sig_created" if created_at.nil?
       raise InvalidSignatureException.new "Missing site key" if secret.nil?
 
-      t = Time.at(created_at.to_i)
-      utc = Time.utc(t.year, t.month, t.day, t.hour + 7, t.min, t.sec)
-      # raise InvalidSignatureException.new "Invalid timestamp" if (Time.now - utc).abs > 300  # Timestamp is more than 5 minutes out of date.
+      hash_str = params.sort.map {|v| v.join("=") }.join("&")
 
-      check = Base64.encode64 HMAC::SHA1.new(Base64.decode64 secret).update("sig_created=%s" % created_at).digest
+      if time_window
+        created_at = params[:sig_created]
+        raise InvalidSignatureException.new "Missing sig_created" if created_at.nil?
+        t = Time.at(created_at.to_i)
+        utc = Time.utc(t.year, t.month, t.day, t.hour + 7, t.min, t.sec)
+        raise InvalidSignatureException.new "Invalid timestamp" if (Time.now - utc).abs > time_window
+      end
+
+      check = Base64.encode64 HMAC::SHA1.new(Base64.decode64 secret).update(hash_str).digest
+      check = check.strip
       raise InvalidSignatureException.new "Invalid signature" if check != sig
       return sig == check
     end
