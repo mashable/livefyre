@@ -64,6 +64,13 @@ module Livefyre
     end
 
     module ClassMethods
+      # Public: filter helper to validate postback signatures for Livefyre requests.
+      #
+      # options - valid before_filter options, plus :key
+      #
+      # Example:
+      #
+      #     validate_postback_signature :only => [:postback], :key => "your_site_key"
       def validate_postback_signature(options = {})
         key = options.delete :key
         before_filter Proc.new {|c|
