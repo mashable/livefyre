@@ -63,6 +63,7 @@
   utils = function(options) {
     var obj;
     return obj = {
+      load: load,
       startLogin: function(url, width, height, callback) {
         var left, popup, top;
         if (width == null) {
@@ -121,7 +122,7 @@
 
   this.initLivefyre = function(options) {
     var e, element;
-    if (_initialized) {
+    if (_initialized && !options.force) {
       throw "Livefyre has already been initialized";
     }
     _initialized = true;
@@ -146,8 +147,9 @@
           network: options.network,
           authDelegate: options.delegate || defaultDelegate(options)
         };
-        return fyre.conv.load(opts, [options.config], function() {
+        return fyre.conv.load(opts, [options.config], function(widget) {
           var token;
+          options.widget = widget;
           token = cookie(options.cookie_name || "livefyre_utoken");
           if (token) {
             try {

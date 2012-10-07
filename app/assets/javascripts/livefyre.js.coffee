@@ -66,7 +66,7 @@ utils = (options) ->
 
 _initialized = false
 @initLivefyre = (options) ->
-  if _initialized
+  if _initialized and !options.force
     throw "Livefyre has already been initialized"
   _initialized = true
   e = document.getElementById(options.element_id || "livefyre_comments")
@@ -88,7 +88,8 @@ _initialized = false
         network: options.network
         authDelegate: options.delegate || defaultDelegate(options)
 
-      fyre.conv.load opts, [options.config], ->
+      fyre.conv.load opts, [options.config], (widget) ->
+        options.widget = widget
         token = cookie(options.cookie_name || "livefyre_utoken")
         if token
           try
