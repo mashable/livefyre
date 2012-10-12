@@ -121,7 +121,7 @@
   _initialized = false;
 
   this.initLivefyre = function(options) {
-    var e, element;
+    var e, element, returnable;
     if (_initialized && !options.force) {
       throw "Livefyre has already been initialized";
     }
@@ -138,6 +138,7 @@
       options.network || (options.network = e.getAttribute("data-network"));
       options.domain || (options.domain = e.getAttribute("data-domain"));
       options.root || (options.root = e.getAttribute("data-root"));
+      returnable = utils(options);
       this.FYRE_LOADED_CB = function() {
         var opts;
         if (options.preLoad) {
@@ -149,7 +150,7 @@
         };
         return fyre.conv.load(opts, [options.config], function(widget) {
           var token;
-          options.widget = widget;
+          returnable.widget = widget;
           token = cookie(options.cookie_name || "livefyre_utoken");
           if (token) {
             try {
@@ -167,7 +168,7 @@
           "data-lf-domain": options.network
         });
       }
-      return utils(options);
+      return returnable;
     } else {
       return null;
     }

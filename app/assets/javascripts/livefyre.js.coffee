@@ -82,6 +82,8 @@ _initialized = false
     options.domain  ||= e.getAttribute("data-domain")
     options.root    ||= e.getAttribute("data-root")
 
+    returnable = utils(options)
+
     @FYRE_LOADED_CB = ->
       options.preLoad(fyre) if options.preLoad
       opts =
@@ -89,7 +91,7 @@ _initialized = false
         authDelegate: options.delegate || defaultDelegate(options)
 
       fyre.conv.load opts, [options.config], (widget) ->
-        options.widget = widget
+        returnable.widget = widget
         token = cookie(options.cookie_name || "livefyre_utoken")
         if token
           try
@@ -99,7 +101,7 @@ _initialized = false
 
     unless options.manualLoad
       element = load "http://#{options.root}/wjs/v3.0/javascripts/livefyre.js", null, null, {"data-lf-domain": options.network}
-    utils(options)
+    returnable
 
   else
     null
