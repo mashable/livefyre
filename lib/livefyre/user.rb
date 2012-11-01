@@ -126,6 +126,16 @@ module Livefyre
       end
     end
 
+    # Public: Convenience method to refresh a user by ID
+    #
+    # id - A Livefyre user ID to refresh
+    #
+    # Returns [Bool] true on success
+    # Raises [APIException] if the request failed
+    def self.refresh(id)
+      new(id).refresh
+    end
+
     # Public: Fetch a Livefyre::User from a user record or ID
     #
     # userish - [String/User/Int] A User or user ID

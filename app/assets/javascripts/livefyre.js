@@ -16,9 +16,9 @@
   load = null;
 
   (function() {
-    var fjs, __loadedScripts;
+    var head, __loadedScripts;
     __loadedScripts = [];
-    fjs = null;
+    head = null;
     return load = function(source, id, content, options) {
       var js, k, v;
       if (!content) {
@@ -31,8 +31,8 @@
         return;
       }
       __loadedScripts[id] = true;
-      if (!fjs) {
-        fjs = document.getElementsByTagName('script')[0];
+      if (!head) {
+        head = document.getElementsByTagName('head')[0];
       }
       js = document.createElement("script");
       js.id = id;
@@ -45,7 +45,7 @@
           js[k] = v;
         }
       }
-      fjs.parentNode.insertBefore(js, fjs);
+      head.appendChild(js);
       return js;
     };
   })();

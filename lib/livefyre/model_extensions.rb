@@ -2,29 +2,12 @@ module Livefyre
   module Model
     extend ActiveSupport::Concern
 
-    # Resque worker for updating Livefyre users via ping-to-pull
-    class RequestPull
-      @queue = :livefyre
-
-      # Public: Pings Livefyre, requesting that the user identified by the passed ID is refreshed.
-      def self.perform(id)
-        Livefyre::User.new( id ).refresh
-      end
-    end
-
     # Public: Ping Livefyre to refresh this user's record
-    #
-    # defer - If true, will use Resque to process the update
-    def refresh_livefyre(defer = false)
-      livefyre_id = self._livefyre_id
-      if defer
-        if defined?(Resque)
-          Resque.enqueue Livefyre::Model::RequestPull, livefyre_id
-        else
-          raise ":defer was passed, but Resque was not found"
-        end
+    def refresh_livefyre
+      if _livefyre_callback
+        _livefyre_callback.call(self, self._livefyre_id)
       else
-        Livefyre::Model::RequestPull.perform livefyre_id
+        Livefyre::User.refresh( self._livefyre_id )
       end
     end
 
@@ -34,7 +17,7 @@ module Livefyre
       if updates = _livefyre_options[:update_on]
         updates.each do |field|
           if send("#{field}_changed?")
-            refresh_livefyre _livefyre_options[:defer]
+            refresh_livefyre
             break
           end
         end
@@ -43,6 +26,10 @@ module Livefyre
 
     def _livefyre_options
       self.class.instance_variable_get("@livefyre_options")
+    end
+
+    def _livefyre_callback
+      self.class.instance_variable_get("@livefyre_update_block")
     end
 
     def _livefyre_id
@@ -67,8 +54,9 @@ module Livefyre
       #    livefyre_user :update_on => [:email, :first_name, :last_name, :username, :picture_url], :id => :custom_livefyre_id
       #
       # Returns [nil]
-      def livefyre_user(options = {})
+      def livefyre_user(options = {}, &block)
         @livefyre_options = options
+        @livefyre_update_block = block
         after_save :update_livefyre_if_fields_changed
       end
     end

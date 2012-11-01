@@ -27,12 +27,15 @@ if defined? Livefyre::Model
     end
   end
 
-  class UserWithDefer < BaseUser
-    livefyre_user :update_on => [:email], :defer => true
+  class UserWithBlock < BaseUser
+    attr_accessor :foo
+    livefyre_user :update_on => [:email] do |o, id|
+      o.foo = 1
+    end
   end
 
-  class UserWithoutDefer < BaseUser
-    livefyre_user :update_on => [:email]
+  class UserWithoutBlock < BaseUser
+    livefyre_user :update_on => [:email] 
   end
 
   class UserWithCustomId < BaseUser
@@ -46,33 +49,34 @@ if defined? Livefyre::Model
   describe Livefyre::Model do
     context "when saving" do
       it "should not do anything if the watched fields haven't changed" do
-        u = UserWithDefer.new
+        u = UserWithoutBlock.new
         u.should_not_receive(:refresh_livefyre)
         u.save
       end
 
       it "should call refresh when fields have changed" do
-        u = UserWithDefer.new
+        u = UserWithoutBlock.new
         u.email = "new@email.com"
         u.should_receive(:refresh_livefyre)
         u.save
       end
 
-      context "an instance that is set to defer" do
-        let(:user) { UserWithDefer.new }
+      context "an instance that is set to call a block" do
+        let(:user) { UserWithBlock.new }
 
-        it "should invoke Resque when refresh_livefyre is called" do
-          Resque.should_receive(:enqueue).with(Livefyre::Model::RequestPull, user.id)
+        it "should invoke the passed block when refresh_livefyre is called" do
+          Livefyre::User.should_not_receive(:refresh)
           user.email = "new@email.com"
           user.save
+          user.foo.should == 1
         end
       end
 
       context "an instance that is not set to defer" do
-        let(:user) { UserWithoutDefer.new }
+        let(:user) { UserWithoutBlock.new }
 
         it "should invoke Livefyre::Model::RequestPull when refresh_livefyre is called" do
-          Livefyre::Model::RequestPull.should_receive(:perform).with(user.id)
+          Livefyre::User.should_receive(:refresh)
           user.email = "new@email.com"
           user.save
         end
@@ -82,7 +86,7 @@ if defined? Livefyre::Model
         let(:user) { UserWithCustomId.new }
 
         it "should invoke Livefyre::Model::RequestPull when refresh_livefyre is called" do
-          Livefyre::Model::RequestPull.should_receive(:perform) #.with(user.custom_id)
+          Livefyre::User.should_receive(:refresh)
           user.email = "new@email.com"
           user.save
         end
