@@ -74,7 +74,7 @@ module Livefyre
       def validate_postback_signature(options = {})
         key = options.delete :key
         before_filter Proc.new {|c|
-          Livefyre::Site.validate_signature.validate_signature(c.params, key)
+          Livefyre::Site.validate_signature(c.params, key)
         }, options
       end
     end
