@@ -225,9 +225,7 @@ module Livefyre
       if time_window
         created_at = params[:sig_created]
         raise InvalidSignatureException.new "Missing sig_created" if created_at.nil?
-        t = Time.at(created_at.to_i)
-        utc = Time.utc(t.year, t.month, t.day, t.hour + 7, t.min, t.sec)
-        raise InvalidSignatureException.new "Invalid timestamp" if (Time.now - utc).abs > time_window
+        raise InvalidSignatureException.new "Invalid timestamp" if (Time.now.utc - Time.at(created_at.to_i).utc).abs > time_window
       end
 
       check = Base64.encode64 HMAC::SHA1.new(Base64.decode64 secret).update(hash_str).digest
