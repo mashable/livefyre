@@ -91,12 +91,14 @@ Or you can have the gem do it automatically from the model:
       livefyre_user :update_on => [:email, :display_name]
     end
 
-You can even have the gem do your ping updated asynchronously with Resque
+You can provide your own update callback, in case you want to use something like Sidekiq to do the updates:
 
     class User < ActiveRecord::Base
       # ...
 
-      livefyre_user :update_on => [:email, :display_name], :defer => true
+      livefyre_user :update_on => [:email, :display_name] do |user, livefyre_id|
+        Livefyre::User.delay.refresh livefyre_id
+      end
     end
 
 This will enqueue a ping-to-pull job in the "livefyre" queue. Make sure you have a worker running that'll handle that queue!
