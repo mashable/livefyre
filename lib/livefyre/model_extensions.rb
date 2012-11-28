@@ -5,9 +5,9 @@ module Livefyre
     # Public: Ping Livefyre to refresh this user's record
     def refresh_livefyre
       if _livefyre_callback
-        _livefyre_callback.call(self, self._livefyre_id)
+        _livefyre_callback.call( self, self.send(:_livefyre_id) )
       else
-        Livefyre::User.refresh( self._livefyre_id )
+        Livefyre::User.refresh( self.send(:_livefyre_id) )
       end
     end
 
