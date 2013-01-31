@@ -15,6 +15,9 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Livefyre::VERSION
 
+  gem.signing_key = '/home/chris/.gemcert/cheald@mashable.com-private_key.pem'
+  gem.cert_chain  = ['gem-public_cert.pem']
+
   gem.add_dependency "faraday"
   gem.add_dependency "jwt"
   gem.add_dependency "ruby-hmac"
