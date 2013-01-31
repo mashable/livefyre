@@ -7,8 +7,7 @@ load = null
 (->
   __loadedScripts = []
   fjs = null
-  load = (source, id, content, options) ->
-    content = null if !content
+  load = (source, id, options) ->
     return if (document.getElementById(id))
     return if __loadedScripts[id]
     __loadedScripts[id] = true
@@ -17,7 +16,6 @@ load = null
     js.id = id
     js.async = true
     js.src = source
-    js.innerHTML = content
     js[k] = v for k, v of options if options
 
     fjs.parentNode.insertBefore(js, fjs)
@@ -100,7 +98,7 @@ _initialized = false
             window.console.log "Error logging in:", e if window.console
 
     unless options.manualLoad
-      element = load "http://#{options.root}/wjs/v3.0/javascripts/livefyre.js", null, null, {"data-lf-domain": options.network}
+      element = load "http://#{options.root}/wjs/v3.0/javascripts/livefyre.js", null, {"data-lf-domain": options.network}
     returnable
 
   else
