@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Livefyre::VERSION
 
-  gem.signing_key = '/home/chris/.gemcert/cheald@mashable.com-private_key.pem'
+  gem.signing_key = File.expand_path('~/.gemcert/cheald@mashable.com-private_key.pem')
   gem.cert_chain  = ['gem-public_cert.pem']
 
   gem.add_dependency "faraday"
