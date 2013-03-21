@@ -6,7 +6,7 @@
 <title>
   Module: Livefyre::Model::ClassMethods
   
-    &mdash; Documentation by YARD 0.8.1
+    &mdash; Documentation by YARD 0.8.5.2
   
 </title>
 
@@ -84,7 +84,16 @@
 </dl>
 <div class="clear"></div>
 
+<div class="docstring">
+  <div class="discussion">
+    
 
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -102,7 +111,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#livefyre_user-instance_method" title="#livefyre_user (instance method)">- (Object) <strong>livefyre_user</strong>(options = {}) </a>
+      <a href="#livefyre_user-instance_method" title="#livefyre_user (instance method)">- (nil) <strong>livefyre_user</strong>(options = {}, &amp;block) </a>
     
 
     
@@ -117,8 +126,8 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Adds callback handlers and additional methods for treating this
-record as a user record.</p>
+<p>Adds callback handlers and additional methods for treating this record as a
+user record.</p>
 </div></span>
   
 </li>
@@ -136,7 +145,7 @@ record as a user record.</p>
       <div class="method_details first">
   <h3 class="signature first" id="livefyre_user-instance_method">
   
-    - (<tt>Object</tt>) <strong>livefyre_user</strong>(options = {}) 
+    - (<tt>nil</tt>) <strong>livefyre_user</strong>(options = {}, &amp;block) 
   
 
   
@@ -145,25 +154,95 @@ record as a user record.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Adds callback handlers and additional methods for treating this
-record as a user record.</p>
-
-<p>options    - [Hash] of options to initialize behavior with :update_on -
-[Array&lt;Symbol&gt;] List of fields which should trigger a Livefyre update
-when they're updated. :id        - [Symbol] Name of the method to use for
-determining this record's livefyre ID. If not given, #id is used.</p>
-
-<p>Examples</p>
-
-<pre class="code ruby"><code><span class='id identifier rubyid_livefyre_user'>livefyre_user</span> <span class='symbol'>:update_on</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:email</span><span class='comma'>,</span> <span class='symbol'>:first_name</span><span class='comma'>,</span> <span class='symbol'>:last_name</span><span class='comma'>,</span> <span class='symbol'>:username</span><span class='comma'>,</span> <span class='symbol'>:picture_url</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='symbol'>:custom_livefyre_id</span></code></pre>
-
-<p>Returns [nil]</p>
+<p>Adds callback handlers and additional methods for treating this record as a
+user record.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_livefyre_user'>livefyre_user</span> <span class='symbol'>:update_on</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:email</span><span class='comma'>,</span> <span class='symbol'>:first_name</span><span class='comma'>,</span> <span class='symbol'>:last_name</span><span class='comma'>,</span> <span class='symbol'>:username</span><span class='comma'>,</span> <span class='symbol'>:picture_url</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='symbol'>:custom_livefyre_id</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>of options to initialize behavior with</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:update_on</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Symbol&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>List of fields which should trigger a Livefyre update when they're updated.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:id</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Name of the method to use for determining this record's livefyre ID. If not
+given, #id is used.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -171,16 +250,18 @@ determining this record's livefyre ID. If not given, #id is used.</p>
       <pre class="lines">
 
 
-70
-71
-72
-73</pre>
+57
+58
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/livefyre/model_extensions.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/livefyre/model_extensions.rb', line 57</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_livefyre_user'>livefyre_user</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_livefyre_user'>livefyre_user</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='ivar'>@livefyre_options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span>
+  <span class='ivar'>@livefyre_update_block</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
   <span class='id identifier rubyid_after_save'>after_save</span> <span class='symbol'>:update_livefyre_if_fields_changed</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -193,9 +274,9 @@ determining this record's livefyre ID. If not given, #id is used.</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Sep 20 15:21:49 2012 by
+  Generated on Thu Mar 21 13:46:06 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.1 (ruby-1.9.3).
+  0.8.5.2 (ruby-1.9.3).
 </div>
 
   </body>

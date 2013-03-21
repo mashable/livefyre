@@ -6,7 +6,7 @@
 <title>
   Module: Livefyre::Helpers
   
-    &mdash; Documentation by YARD 0.8.1
+    &mdash; Documentation by YARD 0.8.5.2
   
 </title>
 
@@ -87,7 +87,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Public: View helpers for Livefyre</p>
+<p>View helpers for Livefyre</p>
 
 
   </div>
@@ -113,7 +113,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#livefyre_comments-instance_method" title="#livefyre_comments (instance method)">- (Object) <strong>livefyre_comments</strong>(id, title, link, tags = nil, options = {}) </a>
+      <a href="#livefyre_comments-instance_method" title="#livefyre_comments (instance method)">- (String) <strong>livefyre_comments</strong>(id, title, link, tags = nil, options = {}) </a>
     
 
     
@@ -128,7 +128,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Add a Livefyre comment form to this page.</p>
+<p>Add a Livefyre comment form to this page.</p>
 </div></span>
   
 </li>
@@ -146,7 +146,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="livefyre_comments-instance_method">
   
-    - (<tt>Object</tt>) <strong>livefyre_comments</strong>(id, title, link, tags = nil, options = {}) 
+    - (<tt>String</tt>) <strong>livefyre_comments</strong>(id, title, link, tags = nil, options = {}) 
   
 
   
@@ -155,21 +155,119 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Add a Livefyre comment form to this page.</p>
-
-<p>id      - [String, Integer] identifier to use for this conversation. Likely
-a post ID. title   - [String] Title of this post or conversation link    -
-[String] Link to this post or conversation tags    - [Array, String]
-Optional array or comma-delimited list of tags on this conversation.
-options - [Hash] Additional options to pass to the created div tag.</p>
-
-<p>Returns [String] div element for insertion into your view</p>
+<p>Add a Livefyre comment form to this page.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>identifier to use for this conversation. Likely a post ID.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>title</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Title of this post or conversation</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>link</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Link to this post or conversation</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>tags</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>, <tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Optional array or comma-delimited list of tags on this conversation.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Additional options to pass to the created div tag.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns String div element for insertion into your view</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -221,9 +319,9 @@ options - [Hash] Additional options to pass to the created div tag.</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Sep 20 15:21:49 2012 by
+  Generated on Thu Mar 21 13:46:05 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.1 (ruby-1.9.3).
+  0.8.5.2 (ruby-1.9.3).
 </div>
 
   </body>

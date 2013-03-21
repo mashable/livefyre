@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.8.1
+    &mdash; Documentation by YARD 0.8.5.2
   
 </title>
 
@@ -69,17 +69,17 @@
 
 <p>Add this line to your application&#39;s Gemfile:</p>
 
-<pre class="code ruby"><code><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>livefyre</span><span class='tstring_end'>'</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>livefyre</span><span class='tstring_end'>'</span></span>
 </code></pre>
 
 <p>And then execute:</p>
 
-<pre class="code ruby"><code>$ bundle
+<pre class="code ruby"><code class="ruby">$ bundle
 </code></pre>
 
 <p>Or install it yourself as:</p>
 
-<pre class="code ruby"><code>$ gem install livefyre
+<pre class="code ruby"><code class="ruby">$ gem install livefyre
 </code></pre>
 
 <h2>Documentation</h2>
@@ -88,7 +88,7 @@
 
 <p>You can generate full documentation yourself from the source tree. Requires the yard-tomdoc plugin.</p>
 
-<pre class="code ruby"><code>yard --plugin yard-tomdoc -o doc
+<pre class="code ruby"><code class="ruby">yard --plugin yard-tomdoc -o doc
 </code></pre>
 
 <h2>Usage</h2>
@@ -96,7 +96,7 @@
 <p>You can set a default configuration object for Livefyre, which will prevent you from having to pass a client to
 all your object proxies manually.</p>
 
-<pre class="code ruby"><code><span class='const'>Livefyre</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+<pre class="code ruby"><code class="ruby"><span class='const'>Livefyre</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='lbrace'>{</span>
   <span class='symbol'>:network</span>      <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foo.fyre.co</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
   <span class='symbol'>:network_key</span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>blorgons</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
   <span class='symbol'>:site_id</span>      <span class='op'>=&gt;</span> <span class='int'>1234</span><span class='comma'>,</span>
@@ -110,7 +110,7 @@ all your object proxies manually.</p>
 
 <p>Once that&#39;s set, you&#39;re ready to start talking to Livefyre.</p>
 
-<pre class="code ruby"><code><span class='id identifier rubyid_domain'>domain</span> <span class='op'>=</span> <span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>Domain</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_domain'>domain</span> <span class='op'>=</span> <span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>Domain</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 <span class='id identifier rubyid_domain'>domain</span><span class='period'>.</span><span class='id identifier rubyid_set_pull_url'>set_pull_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://foo.bar/users/{id}/pull/</span><span class='tstring_end'>&quot;</span></span>
 
 <span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>some_user_id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -125,12 +125,12 @@ all your object proxies manually.</p>
 
 <p>You need to add a route to your routes file to handle profile pull requests from Livefyre. That&#39;ll look something like:</p>
 
-<pre class="code ruby"><code><span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/livefyre/:id/pull</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:to</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>users#pull</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_get'>get</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/livefyre/:id/pull</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:to</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>users#pull</span><span class='tstring_end'>&quot;</span></span>
 </code></pre>
 
 <p>Of course, you need a matching controller action</p>
 
-<pre class="code ruby"><code><span class='kw'>def</span> <span class='id identifier rubyid_pull'>pull</span>
+<pre class="code ruby"><code class="ruby"><span class='kw'>def</span> <span class='id identifier rubyid_pull'>pull</span>
   <span class='comment'># Checks the validity of the JWT that Livefyre sends with pull requests. Throws an exception if it's no good.
 </span>  <span class='id identifier rubyid_validate_livefyre_request!'>validate_livefyre_request!</span>
 
@@ -145,12 +145,12 @@ all your object proxies manually.</p>
 <p>Finally, you&#39;ll need to set up a pull URL. Since this is done via the API, you are expected to do it manually. From a Rails console is fine, though
 you may do it any other way you please, too. Livefyre will substitute the string &quot;id&quot; for the user ID it wants data for.</p>
 
-<pre class="code ruby"><code><span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>Domain</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_set_pull_url'>set_pull_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://your.domain.com/livefyre/{id}/pull</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>Domain</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_set_pull_url'>set_pull_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://your.domain.com/livefyre/{id}/pull</span><span class='tstring_end'>&quot;</span></span>
 </code></pre>
 
 <p>You may want to invoke user updates when you save the user record.</p>
 
-<pre class="code ruby"><code><span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
+<pre class="code ruby"><code class="ruby"><span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
   <span class='comment'># ... user record updates here!
 </span>  <span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid__id'>_id</span> <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_refresh'>refresh</span>
 <span class='kw'>end</span>
@@ -158,19 +158,21 @@ you may do it any other way you please, too. Livefyre will substitute the string
 
 <p>Or you can have the gem do it automatically from the model:</p>
 
-<pre class="code ruby"><code><span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
   <span class='comment'># ...
 </span>
   <span class='id identifier rubyid_livefyre_user'>livefyre_user</span> <span class='symbol'>:update_on</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:email</span><span class='comma'>,</span> <span class='symbol'>:display_name</span><span class='rbracket'>]</span>
 <span class='kw'>end</span>
 </code></pre>
 
-<p>You can even have the gem do your ping updated asynchronously with Resque</p>
+<p>You can provide your own update callback, in case you want to use something like Sidekiq to do the updates:</p>
 
-<pre class="code ruby"><code><span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
   <span class='comment'># ...
 </span>
-  <span class='id identifier rubyid_livefyre_user'>livefyre_user</span> <span class='symbol'>:update_on</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:email</span><span class='comma'>,</span> <span class='symbol'>:display_name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:defer</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
+  <span class='id identifier rubyid_livefyre_user'>livefyre_user</span> <span class='symbol'>:update_on</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:email</span><span class='comma'>,</span> <span class='symbol'>:display_name</span><span class='rbracket'>]</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span> <span class='id identifier rubyid_livefyre_id'>livefyre_id</span><span class='op'>|</span>
+    <span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_delay'>delay</span><span class='period'>.</span><span class='id identifier rubyid_refresh'>refresh</span> <span class='id identifier rubyid_livefyre_id'>livefyre_id</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span>
 </code></pre>
 
@@ -180,17 +182,17 @@ you may do it any other way you please, too. Livefyre will substitute the string
 
 <p>To handle postbacks, you&#39;ll need to set up a postback route:</p>
 
-<pre class="code ruby"><code><span class='id identifier rubyid_match'>match</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/livefyre/postback</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>       <span class='label'>to:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>comments#postback</span><span class='tstring_end'>'</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_match'>match</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/livefyre/postback</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>       <span class='label'>to:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>comments#postback</span><span class='tstring_end'>'</span></span>
 </code></pre>
 
 <p>You&#39;ll also need to tell Livefyre about this URL (similar to the ping-to-pull URL, via a console or elsewhere)</p>
 
-<pre class="code ruby"><code><span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>Site</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_set_postback_url'>set_postback_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://foo.com/livefyre/postback</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='const'>Livefyre</span><span class='op'>::</span><span class='const'>Site</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_set_postback_url'>set_postback_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://foo.com/livefyre/postback</span><span class='tstring_end'>&quot;</span></span>
 </code></pre>
 
 <p>Finally, the gem provides a helper for validating Livefyre postback requests.</p>
 
-<pre class="code ruby"><code><span class='kw'>class</span> <span class='const'>CommentsController</span> <span class='op'>&lt;</span> <span class='const'>ApplicationController</span>
+<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>CommentsController</span> <span class='op'>&lt;</span> <span class='const'>ApplicationController</span>
   <span class='id identifier rubyid_validate_postback_signature'>validate_postback_signature</span> <span class='symbol'>:only</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:postback</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>your_site_key</span><span class='tstring_end'>&quot;</span></span>
 
   <span class='kw'>def</span> <span class='id identifier rubyid_postback'>postback</span>
@@ -203,17 +205,17 @@ you may do it any other way you please, too. Livefyre will substitute the string
 
 <p>In the location that you want to use your comment form, include something like the following:</p>
 
-<pre class="code ruby"><code>&lt;%= livefyre_comments post.id, post.title, post_url(post), post.tags %&gt;
+<pre class="code ruby"><code class="ruby">&lt;%= livefyre_comments post.id, post.title, post_url(post), post.tags %&gt;
 </code></pre>
 
 <p>You&#39;ll also need to boot Livefyre with Javascript. In your application.js, you&#39;ll want to include the Livefyre loader in your manifest:</p>
 
-<pre class="code ruby"><code>//=require livefyre.js
+<pre class="code ruby"><code class="ruby">//=require livefyre.js
 </code></pre>
 
 <p>And then somewhere in your application.js, you&#39;ll want to actually boot:</p>
 
-<pre class="code ruby"><code>window.initLivefyre({
+<pre class="code ruby"><code class="ruby">window.initLivefyre({
   login: function() {
       // Things to do when the user clicks the &quot;sign in&quot; link. You probably want to
       // take your user through a login cycle in a popup window, which includes calling
@@ -250,9 +252,9 @@ you may do it any other way you please, too. Livefyre will substitute the string
 </div></div>
 
     <div id="footer">
-  Generated on Thu Sep 20 15:21:49 2012 by
+  Generated on Thu Mar 21 13:46:05 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.1 (ruby-1.9.3).
+  0.8.5.2 (ruby-1.9.3).
 </div>
 
   </body>

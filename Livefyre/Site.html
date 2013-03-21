@@ -6,7 +6,7 @@
 <title>
   Class: Livefyre::Site
   
-    &mdash; Documentation by YARD 0.8.1
+    &mdash; Documentation by YARD 0.8.5.2
   
 </title>
 
@@ -102,8 +102,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Public: An object representing a Livefyre site belonging to a Livefyre
-domain</p>
+<p>An object representing a Livefyre site belonging to a Livefyre domain</p>
 
 
   </div>
@@ -138,9 +137,7 @@ domain</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute client.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -165,9 +162,7 @@ domain</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute id.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -192,9 +187,7 @@ domain</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute options.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -219,9 +212,7 @@ domain</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute secret.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -242,7 +233,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#validate_signature-class_method" title="validate_signature (class method)">+ (Object) <strong>validate_signature</strong>(params, secret, time_window = 300) </a>
+      <a href="#validate_signature-class_method" title="validate_signature (class method)">+ (Bool) <strong>validate_signature</strong>(params, secret, time_window = 300) </a>
     
 
     
@@ -257,7 +248,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Validate a signature as passed by the Livefyre postback service.</p>
+<p>Validate a signature as passed by the Livefyre postback service.</p>
 </div></span>
   
 </li>
@@ -275,7 +266,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_admin-instance_method" title="#add_admin (instance method)">- (Object) <strong>add_admin</strong>(user) </a>
+      <a href="#add_admin-instance_method" title="#add_admin (instance method)">- (Bool) <strong>add_admin</strong>(user) </a>
     
 
     
@@ -290,7 +281,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Adds a user to the list of admins for this site.</p>
+<p>Adds a user to the list of admins for this site.</p>
 </div></span>
   
 </li>
@@ -299,7 +290,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_owner-instance_method" title="#add_owner (instance method)">- (Object) <strong>add_owner</strong>(user) </a>
+      <a href="#add_owner-instance_method" title="#add_owner (instance method)">- (Bool) <strong>add_owner</strong>(user) </a>
     
 
     
@@ -314,7 +305,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Adds a user to the list of owners for this site.</p>
+<p>Adds a user to the list of owners for this site.</p>
 </div></span>
   
 </li>
@@ -323,7 +314,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#admins-instance_method" title="#admins (instance method)">- (Object) <strong>admins</strong> </a>
+      <a href="#admins-instance_method" title="#admins (instance method)">- (Array&lt;Livefyre::User&gt;) <strong>admins</strong> </a>
     
 
     
@@ -338,7 +329,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Retrieve a list of owners associated with this site.</p>
+<p>Retrieve a list of owners associated with this site.</p>
 </div></span>
   
 </li>
@@ -347,7 +338,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#comments-instance_method" title="#comments (instance method)">- (Object) <strong>comments</strong>(since = nil) </a>
+      <a href="#comments-instance_method" title="#comments (instance method)">- (Array&lt;Comment&gt;) <strong>comments</strong>(since = nil) </a>
     
 
     
@@ -362,7 +353,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Fetches the latest comments from this site.</p>
+<p>Fetches the latest comments from this site.</p>
 </div></span>
   
 </li>
@@ -371,7 +362,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create_conversation-instance_method" title="#create_conversation (instance method)">- (Object) <strong>create_conversation</strong>(article_id, title, link, tags = nil) </a>
+      <a href="#create_conversation-instance_method" title="#create_conversation (instance method)">- (Conversation) <strong>create_conversation</strong>(article_id, title, link, tags = nil) </a>
     
 
     
@@ -386,7 +377,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Create a conversation collection on this site.</p>
+<p>Create a conversation collection on this site.</p>
 </div></span>
   
 </li>
@@ -395,7 +386,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#feed-instance_method" title="#feed (instance method)">- (Object) <strong>feed</strong>(since_id = nil) </a>
+      <a href="#feed-instance_method" title="#feed (instance method)">- (Array&lt;Activity&gt;) <strong>feed</strong>(since_id = nil) </a>
     
 
     
@@ -410,7 +401,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Fetches a feed of the site's latest activity.</p>
+<p>Fetches a feed of the site's latest activity.</p>
 </div></span>
   
 </li>
@@ -436,7 +427,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Create a new Site.</p>
+<p>Create a new Site.</p>
 </div></span>
   
 </li>
@@ -445,7 +436,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#owners-instance_method" title="#owners (instance method)">- (Object) <strong>owners</strong> </a>
+      <a href="#owners-instance_method" title="#owners (instance method)">- (Array&lt;Livefyre::User&gt;) <strong>owners</strong> </a>
     
 
     
@@ -460,7 +451,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Retrieve a list of owners associated with this site.</p>
+<p>Retrieve a list of owners associated with this site.</p>
 </div></span>
   
 </li>
@@ -469,7 +460,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#properties-instance_method" title="#properties (instance method)">- (Object) <strong>properties</strong>(reload = false) </a>
+      <a href="#properties-instance_method" title="#properties (instance method)">- (Hash) <strong>properties</strong>(reload = false) </a>
     
 
     
@@ -484,7 +475,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Get a list of properties for this site.</p>
+<p>Get a list of properties for this site.</p>
 </div></span>
   
 </li>
@@ -508,7 +499,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Reload this site's properties from Livefyre.</p>
+<p>Reload this site's properties from Livefyre.</p>
 </div></span>
   
 </li>
@@ -517,7 +508,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove_admin-instance_method" title="#remove_admin (instance method)">- (Object) <strong>remove_admin</strong>(user) </a>
+      <a href="#remove_admin-instance_method" title="#remove_admin (instance method)">- (Bool) <strong>remove_admin</strong>(user) </a>
     
 
     
@@ -532,7 +523,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Removes a user from the list of admins for this site.</p>
+<p>Removes a user from the list of admins for this site.</p>
 </div></span>
   
 </li>
@@ -541,7 +532,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove_owner-instance_method" title="#remove_owner (instance method)">- (Object) <strong>remove_owner</strong>(user) </a>
+      <a href="#remove_owner-instance_method" title="#remove_owner (instance method)">- (Bool) <strong>remove_owner</strong>(user) </a>
     
 
     
@@ -556,7 +547,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Removes a user from the list of owners for this site.</p>
+<p>Removes a user from the list of owners for this site.</p>
 </div></span>
   
 </li>
@@ -565,7 +556,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#search_conversations-instance_method" title="#search_conversations (instance method)">- (Object) <strong>search_conversations</strong>(query, options = {}) </a>
+      <a href="#search_conversations-instance_method" title="#search_conversations (instance method)">- (Array&lt;Conversation&gt;) <strong>search_conversations</strong>(query, options = {}) </a>
     
 
     
@@ -580,7 +571,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Search conversations on this domain.</p>
+<p>Search conversations on this domain.</p>
 </div></span>
   
 </li>
@@ -589,7 +580,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_postback_url-instance_method" title="#set_postback_url (instance method)">- (Object) <strong>set_postback_url</strong>(url) </a>
+      <a href="#set_postback_url-instance_method" title="#set_postback_url (instance method)">- (Bool) <strong>set_postback_url</strong>(url) </a>
     
 
     
@@ -604,7 +595,7 @@ domain</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Public: Set the postback URL for actions on this site.</p>
+<p>Set the postback URL for actions on this site.</p>
 </div></span>
   
 </li>
@@ -613,7 +604,7 @@ domain</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_s-instance_method" title="#to_s (instance method)">- (Object) <strong>to_s</strong> </a>
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
     
 
     
@@ -624,11 +615,11 @@ domain</p>
   
   
   
-  
+  <span class="private note title">private</span>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Internal: Returns a cleaner string representation of this object.</p>
+<p>Returns a cleaner string representation of this object.</p>
 </div></span>
   
 </li>
@@ -652,7 +643,7 @@ domain</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Create a new Site</p>
+<p>Create a new Site</p>
 
 
   </div>
@@ -694,7 +685,6 @@ domain</p>
     
       
       <span id="client=-instance_method"></span>
-      <span id="client-instance_method"></span>
       <div class="method_details first">
   <h3 class="signature first" id="client-instance_method">
   
@@ -707,8 +697,6 @@ domain</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute client</p>
-
 
   </div>
 </div>
@@ -738,7 +726,6 @@ domain</p>
     
       
       <span id="id=-instance_method"></span>
-      <span id="id-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="id-instance_method">
   
@@ -751,8 +738,6 @@ domain</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute id</p>
-
 
   </div>
 </div>
@@ -782,7 +767,6 @@ domain</p>
     
       
       <span id="options=-instance_method"></span>
-      <span id="options-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="options-instance_method">
   
@@ -795,8 +779,6 @@ domain</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute options</p>
-
 
   </div>
 </div>
@@ -826,7 +808,6 @@ domain</p>
     
       
       <span id="secret=-instance_method"></span>
-      <span id="secret-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="secret-instance_method">
   
@@ -839,8 +820,6 @@ domain</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute secret</p>
-
 
   </div>
 </div>
@@ -878,7 +857,7 @@ domain</p>
       <div class="method_details first">
   <h3 class="signature first" id="validate_signature-class_method">
   
-    + (<tt>Object</tt>) <strong>validate_signature</strong>(params, secret, time_window = 300) 
+    + (<tt>Bool</tt>) <strong>validate_signature</strong>(params, secret, time_window = 300) 
   
 
   
@@ -887,21 +866,105 @@ domain</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Validate a signature as passed by the Livefyre postback service</p>
-
-<p>params      - Hash of request parameters secret      - Site key to validate
-signature with time_window - Enforce that the sig_created is within
-time_window seconds of the current time.</p>
-
-<pre class="code ruby"><code>Slush is given to account for system time drift. Pass nil or false to disable timestamp checking.</code></pre>
-
-<p>Returns [Bool] Raises [InvalidSignatureException] on failure</p>
+<p>Validate a signature as passed by the Livefyre postback service</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>params</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Hash of request parameters</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>secret</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Site key to validate signature with</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>time_window</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>300</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Enforce that the sig_created is within time_window seconds of the current
+time. Slush is given to account for system time drift. Pass nil or false to
+disable timestamp checking.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="InvalidSignatureException.html" title="Livefyre::InvalidSignatureException (class)">InvalidSignatureException</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>on failure</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -929,9 +992,7 @@ time_window seconds of the current time.</p>
 232
 233
 234
-235
-236
-237</pre>
+235</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/livefyre/site.rb', line 215</span>
@@ -949,9 +1010,7 @@ time_window seconds of the current time.</p>
   <span class='kw'>if</span> <span class='id identifier rubyid_time_window'>time_window</span>
     <span class='id identifier rubyid_created_at'>created_at</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:sig_created</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_raise'>raise</span> <span class='const'>InvalidSignatureException</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Missing sig_created</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_created_at'>created_at</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_at'>at</span><span class='lparen'>(</span><span class='id identifier rubyid_created_at'>created_at</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_utc'>utc</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='lparen'>(</span><span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span><span class='comma'>,</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_hour'>hour</span> <span class='op'>+</span> <span class='int'>7</span><span class='comma'>,</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span><span class='comma'>,</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_sec'>sec</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>InvalidSignatureException</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid timestamp</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span> <span class='op'>-</span> <span class='id identifier rubyid_utc'>utc</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_abs'>abs</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_time_window'>time_window</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>InvalidSignatureException</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid timestamp</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span> <span class='op'>-</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_at'>at</span><span class='lparen'>(</span><span class='id identifier rubyid_created_at'>created_at</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_abs'>abs</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_time_window'>time_window</span>
   <span class='kw'>end</span>
 
   <span class='id identifier rubyid_check'>check</span> <span class='op'>=</span> <span class='const'>Base64</span><span class='period'>.</span><span class='id identifier rubyid_encode64'>encode64</span> <span class='const'>HMAC</span><span class='op'>::</span><span class='const'>SHA1</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Base64</span><span class='period'>.</span><span class='id identifier rubyid_decode64'>decode64</span> <span class='id identifier rubyid_secret'>secret</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_hash_str'>hash_str</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_digest'>digest</span>
@@ -973,7 +1032,7 @@ time_window seconds of the current time.</p>
       <div class="method_details first">
   <h3 class="signature first" id="add_admin-instance_method">
   
-    - (<tt>Object</tt>) <strong>add_admin</strong>(user) 
+    - (<tt>Bool</tt>) <strong>add_admin</strong>(user) 
   
 
   
@@ -982,16 +1041,49 @@ time_window seconds of the current time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Adds a user to the list of admins for this site</p>
-
-<p>Returns [Bool] true on success Raises [APIException] when response is not
-valid</p>
+<p>Adds a user to the list of admins for this site</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns Bool true on success</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>when response is not valid</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1029,7 +1121,7 @@ valid</p>
       <div class="method_details ">
   <h3 class="signature " id="add_owner-instance_method">
   
-    - (<tt>Object</tt>) <strong>add_owner</strong>(user) 
+    - (<tt>Bool</tt>) <strong>add_owner</strong>(user) 
   
 
   
@@ -1038,16 +1130,49 @@ valid</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Adds a user to the list of owners for this site</p>
-
-<p>Returns [Bool] true on success Raises [APIException] when response is not
-valid</p>
+<p>Adds a user to the list of owners for this site</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns Bool true on success</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>when response is not valid</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1085,7 +1210,7 @@ valid</p>
       <div class="method_details ">
   <h3 class="signature " id="admins-instance_method">
   
-    - (<tt>Object</tt>) <strong>admins</strong> 
+    - (<tt>Array&lt;<span class='object_link'><a href="User.html" title="Livefyre::User (class)">Livefyre::User</a></span>&gt;</tt>) <strong>admins</strong> 
   
 
   
@@ -1094,16 +1219,31 @@ valid</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Retrieve a list of owners associated with this site</p>
-
-<p>Returns [Array&lt;Livefyre::User&gt;] A list of <span class='object_link'><a href="User.html" title="Livefyre::User (class)">users</a></span>
-Raises: [APIException] when response is not valid</p>
+<p>Retrieve a list of owners associated with this site</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="User.html" title="Livefyre::User (class)">Livefyre::User</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns Array&lt;Livefyre::User&gt; A list of <span class='object_link'><a href="User.html" title="Livefyre::User (class)">users</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1143,7 +1283,7 @@ Raises: [APIException] when response is not valid</p>
       <div class="method_details ">
   <h3 class="signature " id="comments-instance_method">
   
-    - (<tt>Object</tt>) <strong>comments</strong>(since = nil) 
+    - (<tt>Array&lt;<span class='object_link'><a href="Comment.html" title="Livefyre::Comment (class)">Comment</a></span>&gt;</tt>) <strong>comments</strong>(since = nil) 
   
 
   
@@ -1152,18 +1292,51 @@ Raises: [APIException] when response is not valid</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Fetches the latest comments from this site</p>
-
-<p>since_id - [Integer] If provided, will return feed items after the given
-comment.</p>
-
-<p>Returns: [Array&lt;Comment&gt;] List of comment</p>
+<p>Fetches the latest comments from this site</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>since_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If provided, will return feed items after the given comment.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Comment.html" title="Livefyre::Comment (class)">Comment</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns: Array&lt;Comment&gt; List of comment</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1189,7 +1362,7 @@ comment.</p>
       <div class="method_details ">
   <h3 class="signature " id="create_conversation-instance_method">
   
-    - (<tt>Object</tt>) <strong>create_conversation</strong>(article_id, title, link, tags = nil) 
+    - (<tt><span class='object_link'><a href="Conversation.html" title="Livefyre::Conversation (class)">Conversation</a></span></tt>) <strong>create_conversation</strong>(article_id, title, link, tags = nil) 
   
 
   
@@ -1198,15 +1371,31 @@ comment.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Create a conversation collection on this site</p>
-
-<p>Returns [Conversation]</p>
+<p>Create a conversation collection on this site</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Conversation.html" title="Livefyre::Conversation (class)">Conversation</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1232,7 +1421,7 @@ comment.</p>
       <div class="method_details ">
   <h3 class="signature " id="feed-instance_method">
   
-    - (<tt>Object</tt>) <strong>feed</strong>(since_id = nil) 
+    - (<tt>Array&lt;<span class='object_link'><a href="Activity.html" title="Livefyre::Activity (class)">Activity</a></span>&gt;</tt>) <strong>feed</strong>(since_id = nil) 
   
 
   
@@ -1241,18 +1430,53 @@ comment.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Fetches a feed of the site's latest activity.</p>
-
-<p>since_id - [Integer] If provided, will return feed items after the given
-feed item.</p>
-
-<p>Returns [Array&lt;Activity&gt;] List of feed activities</p>
+<p>Fetches a feed of the site's latest activity.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>since_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If provided, will return feed items after the given feed item.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Activity.html" title="Livefyre::Activity (class)">Activity</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns Array&lt;Activity&gt; List of feed activities</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1296,7 +1520,7 @@ feed item.</p>
       <div class="method_details ">
   <h3 class="signature " id="owners-instance_method">
   
-    - (<tt>Object</tt>) <strong>owners</strong> 
+    - (<tt>Array&lt;<span class='object_link'><a href="User.html" title="Livefyre::User (class)">Livefyre::User</a></span>&gt;</tt>) <strong>owners</strong> 
   
 
   
@@ -1305,16 +1529,49 @@ feed item.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Retrieve a list of owners associated with this site</p>
-
-<p>Returns [Array&lt;Livefyre::User&gt;] A list of <span class='object_link'><a href="User.html" title="Livefyre::User (class)">users</a></span>
-Raises: APIException when response is not valid</p>
+<p>Retrieve a list of owners associated with this site</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="User.html" title="Livefyre::User (class)">Livefyre::User</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns Array&lt;Livefyre::User&gt; A list of <span class='object_link'><a href="User.html" title="Livefyre::User (class)">users</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Raises: APIException when response is not valid</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1354,7 +1611,7 @@ Raises: APIException when response is not valid</p>
       <div class="method_details ">
   <h3 class="signature " id="properties-instance_method">
   
-    - (<tt>Object</tt>) <strong>properties</strong>(reload = false) 
+    - (<tt>Hash</tt>) <strong>properties</strong>(reload = false) 
   
 
   
@@ -1363,18 +1620,71 @@ Raises: APIException when response is not valid</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Get a list of properties for this site</p>
-
-<p>reload - Force a reload when set</p>
-
-<p>Returns [Hash] Site properties Raises [APIException] when response is not
-valid</p>
+<p>Get a list of properties for this site</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>reload</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Force a reload when set</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns Hash Site properties</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>when response is not valid</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1425,15 +1735,31 @@ valid</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Reload this site's properties from Livefyre</p>
-
-<p>Returns self</p>
+<p>Reload this site's properties from Livefyre</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1461,7 +1787,7 @@ valid</p>
       <div class="method_details ">
   <h3 class="signature " id="remove_admin-instance_method">
   
-    - (<tt>Object</tt>) <strong>remove_admin</strong>(user) 
+    - (<tt>Bool</tt>) <strong>remove_admin</strong>(user) 
   
 
   
@@ -1470,16 +1796,49 @@ valid</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Removes a user from the list of admins for this site</p>
-
-<p>Returns [Bool] true on success Raises [APIException] when response is not
-valid</p>
+<p>Removes a user from the list of admins for this site</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns Bool true on success</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>when response is not valid</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1517,7 +1876,7 @@ valid</p>
       <div class="method_details ">
   <h3 class="signature " id="remove_owner-instance_method">
   
-    - (<tt>Object</tt>) <strong>remove_owner</strong>(user) 
+    - (<tt>Bool</tt>) <strong>remove_owner</strong>(user) 
   
 
   
@@ -1526,16 +1885,49 @@ valid</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Removes a user from the list of owners for this site</p>
-
-<p>Returns [Bool] true on success Raises [APIException] when response is not
-valid</p>
+<p>Removes a user from the list of owners for this site</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns Bool true on success</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>when response is not valid</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1573,7 +1965,7 @@ valid</p>
       <div class="method_details ">
   <h3 class="signature " id="search_conversations-instance_method">
   
-    - (<tt>Object</tt>) <strong>search_conversations</strong>(query, options = {}) 
+    - (<tt>Array&lt;<span class='object_link'><a href="Conversation.html" title="Livefyre::Conversation (class)">Conversation</a></span>&gt;</tt>) <strong>search_conversations</strong>(query, options = {}) 
   
 
   
@@ -1582,28 +1974,204 @@ valid</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Search conversations on this domain</p>
-
-<p>query   - string to query for options - [Hash] of options :fields - list of
-fields to search. Default [:article, :title, :body] :sort   - Sort order
-for options. Valid values are [:relevance, :created, :updated, :hotness,
-:ncomments]. Default is :relevance :fields - List of fields to return in
-the result. Valid values are: article_id, site_id, domain_id, title,
-published, updated, author, url, ncomment, nuser, annotation, nlp, hotness,
-hottest_value, hottest_time, peak, peak_value, peak_time, comments:5,
-users:5, comment_state, hit_field, dispurl, relevancy :max    - Maximum
-number of fields to return :since  - [DateTime] Minimum date of results to
-return :until  - [DateTime] Maximum date of results to return :page   -
-Page of results to fetch. Default 1.</p>
-
-<p>Returns [Array&lt;Conversation&gt;] An array of matching conversations
-Raises [APIException] when response is not valid</p>
+<p>Search conversations on this domain</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>query</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>string to query for</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>of options</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:fields</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>list of fields to search. Default [:article, :title, :body]</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:sort</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Sort order for options. Valid values are [:relevance, :created, :updated,
+:hotness, :ncomments]. Default is :relevance</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:fields</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>List of fields to return in the result. Valid values are: article_id,
+site_id, domain_id, title, published, updated, author, url, ncomment,
+nuser, annotation, nlp, hotness, hottest_value, hottest_time, peak,
+peak_value, peak_time, comments:5, users:5, comment_state, hit_field,
+dispurl, relevancy</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:max</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Maximum number of fields to return</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:since</span>
+      
+      
+        <span class='type'>(<tt>DateTime</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Minimum date of results to return</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:until</span>
+      
+      
+        <span class='type'>(<tt>DateTime</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Maximum date of results to return</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:page</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Page of results to fetch. Default 1.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Conversation.html" title="Livefyre::Conversation (class)">Conversation</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns Array&lt;Conversation&gt; An array of matching conversations</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="APIException.html" title="Livefyre::APIException (class)">APIException</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>when response is not valid</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1631,7 +2199,7 @@ Raises [APIException] when response is not valid</p>
       <div class="method_details ">
   <h3 class="signature " id="set_postback_url-instance_method">
   
-    - (<tt>Object</tt>) <strong>set_postback_url</strong>(url) 
+    - (<tt>Bool</tt>) <strong>set_postback_url</strong>(url) 
   
 
   
@@ -1640,20 +2208,53 @@ Raises [APIException] when response is not valid</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Public: Set the postback URL for actions on this site</p>
+<p>Set the postback URL for actions on this site</p>
 
-<pre class="code ruby"><code>See: https://github.com/Livefyre/livefyre-docs/wiki/Accessing-Site-Comment-Data</code></pre>
-
-<p>url - [String] URL to use as the postback URL for actions</p>
-
-<p>Returns [Bool] true on success Raises: [APIException] when response is not
-valid</p>
+<pre class="code ruby"><code class="ruby">See: https://github.com/Livefyre/livefyre-docs/wiki/Accessing-Site-Comment-Data</code></pre>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>url</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URL to use as the postback URL for actions</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns Bool true on success</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1691,7 +2292,7 @@ valid</p>
       <div class="method_details ">
   <h3 class="signature " id="to_s-instance_method">
   
-    - (<tt>Object</tt>) <strong>to_s</strong> 
+    - (<tt>String</tt>) <strong>to_s</strong> 
   
 
   
@@ -1699,16 +2300,36 @@ valid</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Internal: Returns a cleaner string representation of this object</p>
+    <p class="note private">
+  <strong>This method is part of a private API.</strong>
+  You should avoid using this method if possible, as it may be removed or be changed in the future.
+</p>
 
-<p>Returns [String] representation of this class</p>
+<p>Returns a cleaner string representation of this object</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns String representation of this class</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1736,9 +2357,9 @@ valid</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Sep 20 15:21:49 2012 by
+  Generated on Thu Mar 21 13:46:06 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.1 (ruby-1.9.3).
+  0.8.5.2 (ruby-1.9.3).
 </div>
 
   </body>
