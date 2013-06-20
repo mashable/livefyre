@@ -29,10 +29,12 @@ cookie = (token) ->
 utils = (options) ->
   obj =
     load: load
-    startLogin: (url, width = 600, height = 400, callback = null) ->
+    # At some point, callback should move to the last param
+    # keeping this order for backwards compat for now.
+    startLogin: (url, width = 600, height = 400, callback = null, windowName = null) ->
       left = (screen.width / 2) - (width / 2)
       top = (screen.height / 2) - (height / 2)
-      popup = window.open url, name, "menubar=no,toolbar=no,status=no,width=#{width},height=#{height},toolbar=no,left=#{left},top=#{top}"
+      popup = window.open url, windowName, "menubar=no,toolbar=no,status=no,width=#{width},height=#{height},toolbar=no,left=#{left},top=#{top}"
       @finishCallback = callback
       @startLoginPopup(popup)
 
@@ -40,27 +42,27 @@ utils = (options) ->
       @tries = 0
       @popup = popup
       @timer = setInterval(=>
-        @tries += 1
         @__checkLogin()
       , 100)
 
     __checkLogin: ->
       token = cookie(options.cookie_name || "livefyre_utoken")
-      if @popup
-        try
-          if @popup.closed == false and @tries > 30 # 3 seconds
-             clearInterval(@timer)
-             @timer = null
-             @popup = null
-        catch err
 
-      if token
+      if token and @timer
         clearInterval(@timer)
-        @popup.close()
+        @popup.close() if @popup
         @popup = null
         @timer = null
         @finishCallback() if @finishCallback
         window.fyre.conv.login(token)
+      else if @popup and @popup.closed
+        try
+          @tries += 1
+          if @tries > 30 # 3 seconds
+             clearInterval(@timer)
+             @timer = null
+             @popup = null
+        catch err
 
 _initialized = false
 @initLivefyre = (options) ->

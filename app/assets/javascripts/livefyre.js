@@ -16,14 +16,11 @@
   load = null;
 
   (function() {
-    var head, __loadedScripts;
+    var fjs, __loadedScripts;
     __loadedScripts = [];
-    head = null;
-    return load = function(source, id, content, options) {
+    fjs = null;
+    return load = function(source, id, options) {
       var js, k, v;
-      if (!content) {
-        content = null;
-      }
       if (document.getElementById(id)) {
         return;
       }
@@ -31,21 +28,20 @@
         return;
       }
       __loadedScripts[id] = true;
-      if (!head) {
-        head = document.getElementsByTagName('head')[0];
+      if (!fjs) {
+        fjs = document.getElementsByTagName('script')[0];
       }
       js = document.createElement("script");
       js.id = id;
       js.async = true;
       js.src = source;
-      js.innerHTML = content;
       if (options) {
         for (k in options) {
           v = options[k];
           js[k] = v;
         }
       }
-      head.appendChild(js);
+      fjs.parentNode.insertBefore(js, fjs);
       return js;
     };
   })();
@@ -64,7 +60,7 @@
     var obj;
     return obj = {
       load: load,
-      startLogin: function(url, width, height, callback) {
+      startLogin: function(url, width, height, callback, windowName) {
         var left, popup, top;
         if (width == null) {
           width = 600;
@@ -75,9 +71,12 @@
         if (callback == null) {
           callback = null;
         }
+        if (windowName == null) {
+          windowName = null;
+        }
         left = (screen.width / 2) - (width / 2);
         top = (screen.height / 2) - (height / 2);
-        popup = window.open(url, name, "menubar=no,toolbar=no,status=no,width=" + width + ",height=" + height + ",toolbar=no,left=" + left + ",top=" + top);
+        popup = window.open(url, windowName, "menubar=no,toolbar=no,status=no,width=" + width + ",height=" + height + ",toolbar=no,left=" + left + ",top=" + top);
         this.finishCallback = callback;
         return this.startLoginPopup(popup);
       },
@@ -86,33 +85,34 @@
         this.tries = 0;
         this.popup = popup;
         return this.timer = setInterval(function() {
-          _this.tries += 1;
           return _this.__checkLogin();
         }, 100);
       },
       __checkLogin: function() {
         var token;
         token = cookie(options.cookie_name || "livefyre_utoken");
-        if (this.popup) {
-          try {
-            if (this.popup.closed === false && this.tries > 30) {
-              clearInterval(this.timer);
-              this.timer = null;
-              this.popup = null;
-            }
-          } catch (err) {
-
-          }
-        }
-        if (token) {
+        if (token && this.timer) {
           clearInterval(this.timer);
-          this.popup.close();
+          if (this.popup) {
+            this.popup.close();
+          }
           this.popup = null;
           this.timer = null;
           if (this.finishCallback) {
             this.finishCallback();
           }
           return window.fyre.conv.login(token);
+        } else if (this.popup && this.popup.closed) {
+          try {
+            this.tries += 1;
+            if (this.tries > 30) {
+              clearInterval(this.timer);
+              this.timer = null;
+              return this.popup = null;
+            }
+          } catch (err) {
+
+          }
         }
       }
     };
@@ -164,7 +164,7 @@
         });
       };
       if (!options.manualLoad) {
-        element = load("http://" + options.root + "/wjs/v3.0/javascripts/livefyre.js", null, null, {
+        element = load("http://" + options.root + "/wjs/v3.0/javascripts/livefyre.js", null, {
           "data-lf-domain": options.network
         });
       }
