@@ -76,6 +76,7 @@ _initialized = false
       collectionMeta: e.getAttribute("data-collection-meta")
       articleId: e.getAttribute("data-article-id")
       siteId: e.getAttribute("data-site-id")
+      postToButtons: JSON.parse(e.getAttribute("data-post-to-buttons"))
       el: e.id
 
     options.network ||= e.getAttribute("data-network")
@@ -90,6 +91,7 @@ _initialized = false
         network: options.network
         authDelegate: options.delegate || defaultDelegate(options)
 
+      console.log options.config
       fyre.conv.load opts, [options.config], (widget) ->
         returnable.widget = widget
         token = cookie(options.cookie_name || "livefyre_utoken")

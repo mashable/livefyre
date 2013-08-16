@@ -21,7 +21,8 @@ module Livefyre
           :"site-id" => meta[:siteId],
           :"article-id" => meta[:articleId],
           :network => Livefyre.client.host,
-          :root => Livefyre.config[:domain]
+          :root => Livefyre.config[:domain],
+          :"post-to-buttons" => Livefyre.config[:postToButtons]
         }
       )
       content_tag(:div, "", options)
