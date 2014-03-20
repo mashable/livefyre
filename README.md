@@ -6,7 +6,7 @@ Interface library for Livefyre's API. Currently a mishmash of the v2 and v3 APIs
 
 Add this line to your application's Gemfile:
 
-    gem 'livefyre'
+    gem 'livefyre-mashable'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install livefyre
+    $ gem install livefyre-mashable
 
 ## Documentation
 

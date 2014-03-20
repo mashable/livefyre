@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(spec)/})
-  gem.name          = "livefyre"
+  gem.name          = "livefyre-mashable"
   gem.require_paths = ["lib"]
   gem.version       = Livefyre::VERSION
 
