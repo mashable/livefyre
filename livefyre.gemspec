@@ -30,4 +30,10 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "yard"
   gem.add_development_dependency "yard-tomdoc"
   gem.add_development_dependency "redcarpet"
+  gem.post_install_message = <<-MESSAGE
+  !    The 'livefyre' gem has been deprecated and has been replaced by 'livefyre-mashable'.
+  !    An official client library from Livefyre will replace this one in mid-April 2014.
+  !    See: https://rubygems.org/gems/livefyre-mashable
+  !    And: https://github.com/mashable/livefyre
+  MESSAGE
 end
